@@ -1,0 +1,8 @@
+<div class="reviews">
+  <h3 class="review-titulo">Reseñas</h3>
+  <ul class="comments-list">
+    <li *ngFor="let review of reviews">
+      <app-review-item [review]="review"></app-review-item>
+    </li>
+  </ul>
+</div>
