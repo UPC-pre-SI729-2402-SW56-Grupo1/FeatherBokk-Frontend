@@ -1,0 +1,102 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f4f4e3;
+  padding: 10px;
+  position: relative;
+}
+
+.logo {
+  width: 50px; /* Ajusta el tamaño del logo según sea necesario */
+  margin-right: 10px;
+}
+
+.search-icon {
+  width: 35px; /* Ajusta el tamaño del logo según sea necesario */
+  margin-right: 10px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  margin-right: 20px;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
+.search-container input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.search-container button {
+  background: none;
+  border: none;
+}
+
+/* Estilos para la hamburguesa */
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger-menu span {
+  width: 25px;
+  height: 3px;
+  background-color: black;
+  margin: 4px 0;
+  transition: 0.4s;
+}
+
+/* Menu abierto */
+nav.open {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #f4f4e3;
+    width: 100%;
+    text-align: center;
+  }
+
+  .hamburger-menu {
+    display: flex;
+  }
+
+  .search-container {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+
+.logo-title {
+  display: flex;
+  align-items: center;
+}
+
+
+.title {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #333; /* Ajusta el color y el estilo según tu diseño */
+}

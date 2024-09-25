@@ -1,0 +1,25 @@
+<header>
+  <div class="logo-title">
+    <img src="assets/Logo.png" alt="Feather Book Logo" class="logo" /> <!-- Logo de la aplicación -->
+    <span class="title">FEATHER BOOK</span> <!-- Título al lado del logo -->
+  </div>
+
+  <nav [class.open]="menuOpen">
+    <a href="#">Biblioteca</a>
+    <a href="#">Chat con autores</a>
+    <a href="#">Suscripción</a>
+  </nav>
+
+  <div class="hamburger-menu" (click)="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <div class="search-container">
+    <input type="text" placeholder="¿Qué libro buscas?" />
+    <button>
+      <img src="assets/search-icon.png" alt="Buscar" class="search-icon"/>
+    </button>
+  </div>
+</header>
