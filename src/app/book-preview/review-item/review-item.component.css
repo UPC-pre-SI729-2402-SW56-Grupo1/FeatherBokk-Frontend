@@ -1,0 +1,14 @@
+.username {
+  font-weight: bold;
+}
+
+.review-item {
+  margin: 2px 0 10px 0;
+  padding: 10px;
+  background-color: #eee;
+  border-radius: 5px;
+}
+
+.review-text {
+  margin: 0;
+}
