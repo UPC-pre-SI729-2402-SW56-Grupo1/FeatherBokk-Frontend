@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { UserProfileComponent } from './user-profile/user-profile.component';
-import {HeaderComponent} from "./public/components/header/header.component";
-import {FooterComponent} from "./public/components/footer/footer.component";
+import { HeaderComponent } from "./public/components/header/header.component";
+import { FooterComponent } from "./public/components/footer/footer.component";
+import { SubscriptionPlansComponent } from './subscription-plans/subscription-plans.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, FooterComponent,UserProfileComponent],
+  imports: [RouterOutlet, HeaderComponent, FooterComponent,SubscriptionPlansComponent],  // Importa el componente aquí
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'FeatherBook-Frontend';
