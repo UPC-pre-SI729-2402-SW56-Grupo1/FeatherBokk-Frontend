@@ -2,8 +2,6 @@ import { Routes } from '@angular/router';
 /*import { InicioComponent } from './inicio/inicio.component';
 import { LibrosSubidosComponent } from './libros-subidos/libros-subidos.component';
 import { HistorialComponent } from './historial/historial.component';
-import { RegistrarseComponent } from './registrarse/registrarse.component';
-import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
 import { ForoComponent } from './foro/foro.component';
 import { LecturaComponent } from './lectura/lectura.component';
 import { ChatConAutoresComponent } from './chat-con-autores/chat-con-autores.component';
@@ -11,6 +9,8 @@ import { BibliotecaComponent } from './biblioteca/biblioteca.component';*/
 import { SubscriptionPlansComponent } from './subscription-plans/subscription-plans.component';
 import { BookDetailComponent } from './book-preview/book-detail/book-detail.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
 
 export const routes: Routes = [
   /*{ path: '', component: InicioComponent },
@@ -24,5 +24,7 @@ export const routes: Routes = [
   { path: 'biblioteca', component: BibliotecaComponent },*/
   { path: 'perfil', component: UserProfileComponent },
   { path: 'libro-vista-previa', component: BookDetailComponent },
-  { path: 'suscripcion', component: SubscriptionPlansComponent }
+  { path: 'suscripcion', component: SubscriptionPlansComponent },
+  { path: 'registrarse', component: RegisterComponent },
+  { path: 'inicio-sesion', component: LoginComponent }
 ];
