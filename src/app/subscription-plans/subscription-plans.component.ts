@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import {HeaderComponent} from "../public/components/header/header.component";
-import {FooterComponent} from "../public/components/footer/footer.component";
 
 @Component({
   selector: 'app-subscription-plans',
@@ -10,5 +8,5 @@ import {FooterComponent} from "../public/components/footer/footer.component";
   styleUrls: ['./subscription-plans.component.css']
 })
 export class SubscriptionPlansComponent {
-  // Aquí puedes agregar la lógica del componente
+
 }
