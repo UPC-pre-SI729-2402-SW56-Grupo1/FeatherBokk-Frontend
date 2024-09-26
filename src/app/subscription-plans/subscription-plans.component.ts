@@ -6,10 +6,7 @@ import {FooterComponent} from "../public/components/footer/footer.component";
   selector: 'app-subscription-plans',
   standalone: true,  // Declara que este es un componente independiente
   templateUrl: './subscription-plans.component.html',
-  imports: [
-    HeaderComponent,
-    FooterComponent
-  ],
+  imports: [],
   styleUrls: ['./subscription-plans.component.css']
 })
 export class SubscriptionPlansComponent {
