@@ -1,0 +1,77 @@
+.subscription-container {
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  background-color: #f5deb3;
+  padding: 50px 0;
+}
+
+.plans {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.plan {
+  background-color: #955f20;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 200px;
+  text-align: left;
+}
+
+.plan h2, .plan h3 {
+  color: white;
+}
+
+.plan h2 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.plan h3 {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.plan ul {
+  list-style: none;
+  padding: 0;
+}
+
+.plan li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 10px;
+
+}
+
+.plan li::before {
+  content: '\2713'; /* Símbolo de check */
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 15px;
+  height: 15px;
+  background-color: #e0e0e0;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 15px;
+  color: #000;
+}
+button {
+  width: 100%;
+  background-color: #e0e0e0;
+  font-weight: bold;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+button:hover {
+  background-color: #d0d0d0;
+}

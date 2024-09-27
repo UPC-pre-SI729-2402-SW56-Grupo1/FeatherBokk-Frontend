@@ -1,13 +1,13 @@
 <header>
   <div class="logo-title">
-    <img src="assets/Logo.png" alt="Feather Book Logo" class="logo" /> <!-- Logo de la aplicación -->
-    <span class="title">FEATHER BOOK</span> <!-- Título al lado del logo -->
+    <img src="assets/Logo.png" alt="Feather Book Logo" class="logo" />
+    <a href="/"><span class="title">FEATHER BOOK</span></a>
   </div>
 
   <nav [class.open]="menuOpen">
-    <a href="#">Biblioteca</a>
-    <a href="#">Chat con autores</a>
-    <a href="#">Suscripción</a>
+    <a href="/biblioteca">Biblioteca</a>
+    <a href="/chat-con-autores">Chat con autores</a>
+    <a href="/suscripcion">Suscripción</a>
   </nav>
 
   <div class="hamburger-menu" (click)="toggleMenu()">
