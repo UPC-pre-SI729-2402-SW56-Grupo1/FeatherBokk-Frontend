@@ -1,30 +1,22 @@
 import { Routes } from '@angular/router';
-/*import { InicioComponent } from './inicio/inicio.component';
-import { LibrosSubidosComponent } from './libros-subidos/libros-subidos.component';
-import { HistorialComponent } from './historial/historial.component';
-import { ForoComponent } from './foro/foro.component';
-import { LecturaComponent } from './lectura/lectura.component';
-import { ChatConAutoresComponent } from './chat-con-autores/chat-con-autores.component';
-import { BibliotecaComponent } from './biblioteca/biblioteca.component';*/
 import { SubscriptionPlansComponent } from './subscription-plans/subscription-plans.component';
 import { BookDetailComponent } from './book-preview/book-detail/book-detail.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+import { BookComponent } from './book/book.component';
+import { ChatAutorComponent } from './chat-autor/chat-autor.component';
+import { ForumComponent } from './forum/forum.component';
+import { HomeComponent } from './home/home.component';
 
 export const routes: Routes = [
-  /*{ path: '', component: InicioComponent },
-  { path: 'libros-subidos', component: LibrosSubidosComponent },
-  { path: 'historial', component: HistorialComponent },
-  { path: 'registrarse', component: RegistrarseComponent },
-  { path: 'inicio-sesion', component: InicioSesionComponent },
-  { path: 'foro', component: ForoComponent },
-  { path: 'lectura', component: LecturaComponent },
-  { path: 'chat-con-autores', component: ChatConAutoresComponent },
-  { path: 'biblioteca', component: BibliotecaComponent },*/
   { path: 'perfil', component: UserProfileComponent },
   { path: 'libro-vista-previa', component: BookDetailComponent },
   { path: 'suscripcion', component: SubscriptionPlansComponent },
   { path: 'registrarse', component: RegisterComponent },
-  { path: 'inicio-sesion', component: LoginComponent }
+  { path: 'inicio-sesion', component: LoginComponent },
+  { path: 'lectura', component: BookComponent },
+  { path: 'foro', component: ForumComponent },
+  { path: 'chat-con-autores', component: ChatAutorComponent },
+  { path: '', component: HomeComponent }
 ];
