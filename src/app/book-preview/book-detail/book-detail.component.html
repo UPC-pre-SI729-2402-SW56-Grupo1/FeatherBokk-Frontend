@@ -1,0 +1,20 @@
+<div class="book-detail">
+  <div class="book-info">
+    <div class="book-read">
+      <img src="{{ book.imageUrl }}" alt="{{ book.title }}" class="book-image">
+      <a href="#" class="button button-read">LEER</a>
+    </div>
+    <div class="button">
+      <a href="#" class="material-symbols-outlined">bookmark</a>
+    </div>
+  </div>
+  <div class="book-information-container">
+    <div class="book-description-container">
+      <p class="book-description">{{ book.description }}</p>
+    </div>
+    <div class="book-description-container">
+      <app-rating [rating]="book.rating"></app-rating>
+      <app-book-reviews></app-book-reviews>
+    </div>
+  </div>
+</div>
