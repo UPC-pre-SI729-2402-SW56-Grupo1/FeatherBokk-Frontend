@@ -1,0 +1,40 @@
+<div class="login-container">
+  <div class="login-card">
+    <img class="logo" src="assets/Logo.png" alt="Feather Book Logo" />
+
+    <form (submit)="onSubmit($event)">
+      <div class="input-group">
+        <label for="email">Correo</label>
+        <input
+          id="email"
+          type="email"
+          name="email"
+          placeholder="ejemplo@gmail.com"
+          required
+        />
+      </div>
+
+      <div class="input-group">
+        <label for="password">Contraseña</label>
+        <div class="password-container">
+          <input
+            id="password"
+            type="{{hidePassword ? 'password' : 'text'}}"
+            name="password"
+            placeholder="Ingresa tu contraseña"
+            required
+          />
+          <button type="button" class="show-password" (click)="togglePasswordVisibility()">
+            <i class="eye-icon">{{hidePassword ? '👁️' : '👁️‍🗨️'}}</i>
+          </button>
+        </div>
+      </div>
+
+      <button type="submit" class="login-button">INICIAR SESIÓN</button>
+    </form>
+
+    <div class="signup-link">
+      ¿No tienes una cuenta? <a href="/registrarse">Regístrate</a>
+    </div>
+  </div>
+</div>
