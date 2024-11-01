@@ -1,13 +1,14 @@
 <header>
   <div class="logo-title">
     <img src="assets/Logo.png" alt="Feather Book Logo" class="logo" />
-    <a href="/"><span class="title">FEATHER BOOK</span></a>
+    <a href="/"
+      ><span class="title">{{ "header.title" | translate }}</span></a
+    >
   </div>
 
   <nav [class.open]="menuOpen">
-    <a href="/biblioteca">Biblioteca</a>
-    <a href="/chat-con-autores">Chat con autores</a>
-    <a href="/suscripcion">Suscripción</a>
+    <a href="/library">{{ "header.library" | translate }}</a>
+    <a href="/subscription">{{ "header.subscription" | translate }}</a>
   </nav>
 
   <div class="hamburger-menu" (click)="toggleMenu()">
@@ -16,10 +17,19 @@
     <span></span>
   </div>
 
-  <div class="search-container">
-    <input type="text" placeholder="¿Qué libro buscas?" />
-    <button>
-      <img src="assets/search-icon.png" alt="Buscar" class="search-icon"/>
-    </button>
+  <div class="auth-buttons">
+    <ng-container *ngIf="!isAuthenticated">
+      <a href="/login" class="btn">{{ "header.login" | translate }}</a>
+      <a href="/register" class="btn">{{ "header.register" | translate }}</a>
+    </ng-container>
+    <ng-container *ngIf="isAuthenticated">
+      <span class="welcome-user"
+        >{{ "header.welcome" | translate }}
+        <a href="/profile" class="profile-button">{{ username }}</a>
+      </span>
+      <button class="btn" (click)="logout()">
+        {{ "header.logout" | translate }}
+      </button>
+    </ng-container>
   </div>
 </header>

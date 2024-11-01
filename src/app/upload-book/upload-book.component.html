@@ -1,0 +1,21 @@
+<div class="upload-book-container">
+  <h2>{{ "uploadBook.title" | translate }}</h2>
+  <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+    <label for="name">{{ "uploadBook.name" | translate }}</label>
+    <input id="name" formControlName="name" type="text" required />
+
+    <label for="summary">{{ "uploadBook.summary" | translate }}</label>
+    <textarea id="summary" formControlName="summary" required></textarea>
+
+    <label for="category">{{ "uploadBook.category" | translate }}</label>
+    <select id="category" formControlName="category" required>
+      <option value="">{{ "uploadBook.selectCategory" | translate }}</option>
+      <option *ngFor="let cat of categories" [value]="cat">{{ cat }}</option>
+    </select>
+
+    <label for="bookurl">{{ "uploadBook.url" | translate }}</label>
+    <input id="bookurl" formControlName="bookurl" type="url" required />
+
+    <button type="submit" [disabled]="bookForm.invalid">{{ "uploadBook.uploadBook" | translate }}</button>
+  </form>
+</div>

@@ -43,6 +43,19 @@
 
 .profile-links {
   margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.book-list-link {
+  text-decoration: none;
+  color: #000;
+  font-size: 18px;
+  margin-right: 10px;
+}
+.book-list-link:hover {
+  text-decoration: underline;
 }
 
 .profile-button {
@@ -62,4 +75,17 @@
 
 .profile-button span {
   font-size: 18px;
+}
+
+.upload-book-link {
+  text-decoration: none;
+  color: #000;
+  padding: 10px;
+  width: fit-content;
+  background-color: #e5e5e5;
+  border-radius: 20px;
+  margin: auto;
+}
+.upload-book-link:hover {
+  background-color: #d5d5d5;
 }

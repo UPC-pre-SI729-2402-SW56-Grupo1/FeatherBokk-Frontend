@@ -1,0 +1,80 @@
+{
+  "header": {
+    "title": "Feather Book",
+    "library": "Biblioteca",
+    "chatAuthors": "Chat con autores",
+    "subscription": "Suscripción",
+    "login": "Iniciar sesión",
+    "register": "Registrarse",
+    "welcome": "Bienvenido,",
+    "logout": "Cerrar sesión"
+  },
+  "footer": {
+    "contact": "Contáctanos: featherbook@gmail.com"
+  },
+  "subscription": {
+    "title": "Suscripción",
+    "level1": {
+      "title": "Nivel 1",
+      "price": "Precio: $0",
+      "feature1": "Acceso a una sección básica de libros, artículos y otros contenidos",
+      "feature2": "Ver los comentarios más destacados y calificación dejados por cada libro",
+      "feature3": "Marcar, resaltar y dejar notas"
+    },
+    "level2": {
+      "title": "Nivel 2",
+      "price": "Precio: $9.99/mes",
+      "feature1": "Acceso a foros de un libro en específico",
+      "feature2": "Recomendaciones de libros o artículos según géneros leídos",
+      "feature3": "Comentar y calificar libros"
+    },
+    "level3": {
+      "title": "Nivel 3",
+      "price": "Precio: $29.99/mes",
+      "feature1": "Poder hablar con el autor del libro, solo aquellos autores que deseen",
+      "feature2": "Descuentos exclusivos en libros solo para miembros",
+      "feature3": "Preventa exclusiva y acceso anticipado a los nuevos títulos de libros"
+    },
+    "buyButton": "Comprar ahora"
+  },
+  "userProfile": {
+    "email": "Correo",
+    "phone": "Teléfono",
+    "subscriptionLevel": "Nivel de suscripción",
+    "level": "Nivel",
+    "booksHistory": "Historial de libros leídos",
+    "uploadedBooks": "Libros subidos",
+    "savedBooks": "Libros guardados",
+    "uploadBook": "Subir libro"
+  },
+  "bookPreview": {
+    "reviews": "Reseñas",
+    "read": "Leer",
+    "form": {
+      "title": "Deja tu comentario y calificación",
+      "comment": "Tu comentario",
+      "rating": "Calificación (1-10)",
+      "send": "Enviar"
+    }
+  },
+  "library": {
+    "searchBook": "Buscar libro",
+    "allCategories": "Todas las categorías",
+    "sortByLastLecture": "Ordenar por última lectura",
+    "sortByUploadDate": "Ordenar por fecha de subida",
+    "remove": "Eliminar",
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "page": "Página",
+    "of": "de"
+  },
+  "uploadBook": {
+    "title": "Subir libro",
+    "name": "Nombre",
+    "summary": "Resumen",
+    "category": "Categoría",
+    "selectCategory": "Seleccione una categoría",
+    "url": "URL del libro",
+    "uploadBook": "Subir libro"
+  }
+}

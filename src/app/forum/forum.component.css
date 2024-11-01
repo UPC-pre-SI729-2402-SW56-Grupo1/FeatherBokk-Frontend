@@ -1,35 +1,35 @@
 .logo-title-book {
   display: flex;
   align-items: center;
-  justify-content: center; /* Centra el contenido horizontalmente */
+  justify-content: center;
   background-color: #f4f4e3;
   padding: 10px;
 }
 
 .back_button {
-  width: 30px; /* Ajusta el tamaño del botón */
+  width: 30px;
   margin-right: 10px;
   cursor: pointer;
 }
 
 header {
   display: flex;
-  justify-content: center; /* Centra el título y el botón */
+  justify-content: center;
   align-items: center;
   background-color: #f4f4e3;
   padding: 10px;
-  border-bottom: 2px solid #333; /* Línea inferior similar al diseño */
+  border-bottom: 2px solid #333;
 }
 
 .header-title {
   font-size: 1.5em;
   font-weight: bold;
-  color: #333; /* Ajusta el color del título */
+  color: #333;
   text-align: center;
 }
 
 .forum-container {
-  background-color: #faf4d3; /* Fondo similar al ejemplo */
+  background-color: #faf4d3;
   padding: 20px;
   text-align: center;
 }
