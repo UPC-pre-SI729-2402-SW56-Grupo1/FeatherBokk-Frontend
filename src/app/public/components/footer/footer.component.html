@@ -1,9 +1,10 @@
 <footer>
   <div class="contact-info">
-    <p>Contáctanos: featherbook&#64;gmail.com</p>
+    <p>{{ "footer.contact" | translate }}</p>
   </div>
-  <div class="brand-info">
-    <p>FEATHER BOOK</p>
+  <div class="language-switcher">
+    <button (click)="switchLanguage('en')" class="button-switcher">EN</button>
+    <button (click)="switchLanguage('es')" class="button-switcher">ES</button>
   </div>
   <div class="social-icons">
     <a href="#"><img src="assets/facebook.svg" alt="Facebook" /></a>
@@ -11,4 +12,5 @@
     <a href="#"><img src="assets/instagram.svg" alt="Instagram" /></a>
     <a href="#"><img src="assets/youtube.svg" alt="YouTube" /></a>
   </div>
+
 </footer>

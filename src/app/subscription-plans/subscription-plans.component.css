@@ -16,8 +16,13 @@
   color: white;
   padding: 20px;
   border-radius: 10px;
-  width: 200px;
+  max-width: 230px;
   text-align: left;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.subscription-level {
+  text-align: center;
 }
 
 .plan h2, .plan h3 {

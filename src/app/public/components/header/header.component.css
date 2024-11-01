@@ -8,12 +8,12 @@ header {
 }
 
 .logo {
-  width: 50px; /* Ajusta el tamaño del logo según sea necesario */
+  width: 50px;
   margin-right: 10px;
 }
 
 .search-icon {
-  width: 35px; /* Ajusta el tamaño del logo según sea necesario */
+  width: 35px;
   margin-right: 10px;
 }
 
@@ -30,23 +30,6 @@ nav a {
   font-size: 18px;
 }
 
-.search-container {
-  display: flex;
-  align-items: center;
-}
-
-.search-container input {
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.search-container button {
-  background: none;
-  border: none;
-}
-
-/* Estilos para la hamburguesa */
 .hamburger-menu {
   display: none;
   flex-direction: column;
@@ -61,7 +44,54 @@ nav a {
   transition: 0.4s;
 }
 
-/* Menu abierto */
+.auth-buttons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.auth-buttons .btn {
+  background-color: #007bff;
+  color: #fff;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.auth-buttons .btn:hover {
+  background-color: #0056b3;
+}
+
+.welcome-user {
+  color: #333;
+}
+
+.profile-button {
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  color: coral;
+}
+
+.language-switcher {
+  display: flex;
+  gap: 5px;
+  margin-left: 15px;
+}
+
+.language-switcher button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
 nav.open {
   display: block;
 }
@@ -94,9 +124,9 @@ nav.open {
   align-items: center;
 }
 
-
-.title {
-  font-size: 1.5em;
+.logo-title a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.8rem;
   font-weight: bold;
-  color: #333; /* Ajusta el color y el estilo según tu diseño */
 }

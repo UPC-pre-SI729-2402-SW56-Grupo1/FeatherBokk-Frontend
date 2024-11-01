@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { AuthGuard } from './auth.guard';
 import { SubscriptionPlansComponent } from './subscription-plans/subscription-plans.component';
 import { BookDetailComponent } from './book-preview/book-detail/book-detail.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
@@ -8,15 +9,22 @@ import { BookComponent } from './book/book.component';
 import { ChatAutorComponent } from './chat-autor/chat-autor.component';
 import { ForumComponent } from './forum/forum.component';
 import { HomeComponent } from './home/home.component';
+import { LibraryComponent } from './library/library.component'
+import { UploadBookComponent } from './upload-book/upload-book.component';
 
 export const routes: Routes = [
-  { path: 'perfil', component: UserProfileComponent },
-  { path: 'libro-vista-previa', component: BookDetailComponent },
-  { path: 'suscripcion', component: SubscriptionPlansComponent },
-  { path: 'registrarse', component: RegisterComponent },
-  { path: 'inicio-sesion', component: LoginComponent },
-  { path: 'lectura', component: BookComponent },
-  { path: 'foro', component: ForumComponent },
-  { path: 'chat-con-autores', component: ChatAutorComponent },
-  { path: '', component: HomeComponent }
+  { path: '', component: HomeComponent, title: 'Home' },
+  { path: 'login', component: LoginComponent, title: 'Login' },
+  { path: 'register', component: RegisterComponent, title: 'Register' },
+  { path: 'profile', component: UserProfileComponent, canActivate: [AuthGuard], title: 'User Profile' },
+  { path: 'book/:id', component: BookDetailComponent, canActivate: [AuthGuard], title: 'Book Preview' },
+  { path: 'subscription', component: SubscriptionPlansComponent, canActivate: [AuthGuard], title: 'Subscription Plans' },
+  { path: 'book-reading', component: BookComponent, canActivate: [AuthGuard], title: 'Book Reading' },
+  { path: 'forum', component: ForumComponent, canActivate: [AuthGuard], title: 'Forum' },
+  { path: 'chat-authors', component: ChatAutorComponent, canActivate: [AuthGuard], title: 'Chat with Authors' },
+  { path: 'library', component: LibraryComponent, canActivate: [AuthGuard], title: 'Library' },
+  { path: 'history', component: LibraryComponent, canActivate: [AuthGuard], title: 'History' },
+  { path: 'uploaded-books', component: LibraryComponent, canActivate: [AuthGuard], title: 'Uploaded Books' },
+  { path: 'saved-books', component: LibraryComponent, canActivate: [AuthGuard], title: 'Saved Books' },
+  { path: 'upload-book', component: UploadBookComponent, canActivate: [AuthGuard], title: 'Upload Book' }
 ];

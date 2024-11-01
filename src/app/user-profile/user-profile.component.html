@@ -1,16 +1,27 @@
 <div class="profile-container">
   <div class="profile-card">
-    <img src="assets/profile-photo.png" alt="Emma Ríos" class="profile-photo" />
-    <div class="profile-name">Emma Ríos</div>
+    <img src="https://thispersondoesnotexist.com/" alt="{{username}}" class="profile-photo" />
+    <div class="profile-name">{{ username }}</div>
   </div>
 
   <div class="profile-info">
-    <p><strong>Correo:</strong> <span class="info-box">emmarios&#64;gmail.com</span></p>
-    <p><strong>Nivel de suscripción:</strong> <span class="info-box">Nivel 1</span></p>
+    <p><strong>{{ "userProfile.email" | translate }}: </strong> <span class="info-box">{{ email }}</span></p>
+    <p><strong>{{ "userProfile.email" | translate }}:</strong> <span class="info-box">{{ phone }}</span></p>
+    <p><strong>{{ "userProfile.subscriptionLevel" | translate }}: </strong> <span class="info-box">{{ "userProfile.level" | translate }} {{ subscriptionLevel }}</span></p>
 
     <div class="profile-links">
-      <button class="profile-button">Historial de libros leídos <span>&#9654;</span></button>
-      <button class="profile-button">Libros subidos <span>&#9654;</span></button>
+      <a href="/history" class="book-list-link">
+        <button class="profile-button">{{ "userProfile.booksHistory" | translate }}<span>&#9654;</span></button>
+      </a>
+      <a href="/saved-books" class="book-list-link">
+        <button class="profile-button">{{ "userProfile.savedBooks" | translate }}<span>&#9654;</span></button>
+      </a>
+      <a href="/uploaded-books" class="book-list-link">
+        <button class="profile-button">{{ "userProfile.uploadedBooks" | translate }}<span>&#9654;</span></button>
+      </a>
+      <a href="/upload-book" class="upload-book-link">
+        {{ "userProfile.uploadBook" | translate }}
+      </a>
     </div>
   </div>
 </div>
