@@ -1,17 +1,18 @@
 import { Component } from '@angular/core';
-import {Router} from "@angular/router";
+import { Router } from '@angular/router';
+import { EventDataService } from '../shared/services/http-common.service';
+
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
   hidePassword: boolean = true;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private eventDataService: EventDataService) {}
 
   togglePasswordVisibility() {
     this.hidePassword = !this.hidePassword;
@@ -24,13 +25,12 @@ export class LoginComponent {
     const email = (form.querySelector('#email') as HTMLInputElement).value;
     const password = (form.querySelector('#password') as HTMLInputElement).value;
 
-    console.log('Email:', email);
-    console.log('Password:', password);
-
-    if (email && password) {
-      this.router.navigate(['/home']);
-    } else {
-      console.log('Por favor, completa los campos');
-    }
+    this.eventDataService.loginUser(email, password).subscribe(response => {
+      if (response.success) {
+        this.router.navigate(['/']);
+      } else {
+        alert('Invalid credentials');
+      }
+    });
   }
 }

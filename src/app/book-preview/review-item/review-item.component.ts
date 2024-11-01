@@ -1,5 +1,11 @@
 import { Component, Input } from '@angular/core';
 
+interface Review {
+  username?: string;
+  comment: string;
+  score: number;
+}
+
 @Component({
   selector: 'app-review-item',
   standalone: true,
@@ -8,5 +14,5 @@ import { Component, Input } from '@angular/core';
   styleUrl: './review-item.component.css'
 })
 export class ReviewItemComponent {
-  @Input() review!: { text: string, author: string };
+  @Input() review!: Review;
 }

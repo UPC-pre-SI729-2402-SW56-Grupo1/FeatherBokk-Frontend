@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { CoverApiService } from './cover-api.service';
+import { EventDataService } from './http-common.service';
 
 describe('CoverApiService', () => {
-  let service: CoverApiService;
+  let service: EventDataService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(CoverApiService);
+    service = TestBed.inject(EventDataService);
   });
 
   it('should be created', () => {

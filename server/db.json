@@ -1,0 +1,660 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "user1",
+      "email": "user1@example.com",
+      "phone": "123456789",
+      "password": "hashedPassword1",
+      "subscriptionLevel": "1",
+      "booksHistory": [
+        {
+          "idBook": "324532",
+          "lastTimeRead": "01/01/2024"
+        }
+      ],
+      "uploadedBooks": [
+        {
+          "idBook": "324532",
+          "uploadedDate": "01/02/2024"
+        }
+      ],
+      "savedBooks": [
+        "324532",
+        "5",
+        "8"
+      ]
+    },
+    {
+      "id": "xy05fwx4a",
+      "username": "123",
+      "email": "1@1.1",
+      "phone": "123",
+      "password": "123",
+      "subscriptionLevel": "1",
+      "booksHistory": [],
+      "uploadedBooks": [],
+      "savedBooks": []
+    },
+    {
+      "id": "2qq4ah2j7",
+      "username": "321",
+      "email": "321@321.321",
+      "phone": "321",
+      "password": "321",
+      "subscriptionLevel": "1",
+      "booksHistory": [],
+      "categoryCount": [],
+      "recomendedBooks": [],
+      "uploadedBooks": [],
+      "savedBooks": []
+    },
+    {
+      "id": "zi70t28xi",
+      "username": "juan",
+      "email": "juan123@gmail.com",
+      "phone": "123",
+      "password": "juan123",
+      "subscriptionLevel": "1",
+      "booksHistory": [
+        {
+          "idBook": "324532",
+          "lastTimeRead": "10/01/2024"
+        },
+        {
+          "idBook": "1",
+          "lastTimeRead": "10/02/2024"
+        }
+      ],
+      "uploadedBooks": [
+        {
+          "idBook": "j602j09ki",
+          "uploadedDate": "01/11/2024"
+        },
+        {
+          "idBook": "5k0xfy6f6",
+          "uploadedDate": "01/11/2024"
+        },
+        {
+          "idBook": "qbl0yql5g",
+          "uploadedDate": "01/11/2024"
+        },
+        {
+          "idBook": "aw4968nh3",
+          "uploadedDate": "01/11/2024"
+        }
+      ],
+      "savedBooks": [
+        "2",
+        "4",
+        "324532",
+        "minku15eu",
+        "aw4968nh3"
+      ]
+    },
+    {
+      "id": "da58",
+      "uploadedBooks": [
+        {
+          "idBook": "rve6fp89p",
+          "uploadedDate": "01/11/2024"
+        }
+      ]
+    }
+  ],
+  "books": [
+    {
+      "id": "1",
+      "name": "Libro de Terror",
+      "summary": "Resumen del libro de terror",
+      "category": "Terror",
+      "views": 100,
+      "totalScore": 9.5,
+      "reviews": [
+        {
+          "idUser": "1",
+          "comment": "Excelente libro de terror",
+          "score": 9,
+          "username": "user1"
+        },
+        {
+          "idUser": "1",
+          "comment": "123",
+          "score": 10
+        }
+      ],
+      "bookurl": "https://example.com/leer/1"
+    },
+    {
+      "id": "324532",
+      "name": "Cuentos de Ciencia Ficción",
+      "summary": "Historias futuristas y sorprendentes",
+      "category": "Ciencia Ficción",
+      "img": "https://example.com/ciencia.jpg",
+      "views": 75,
+      "totalScore": 7.8,
+      "reviews": [
+        {
+          "idUser": "2",
+          "comment": "Interesante y creativo",
+          "score": 8
+        }
+      ],
+      "bookurl": "https://example.com/leer/2"
+    },
+    {
+      "id": "3",
+      "name": "Romance en París",
+      "summary": "Una historia de amor en la ciudad de las luces",
+      "category": "Romance",
+      "img": "https://example.com/romance.jpg",
+      "views": 50,
+      "totalScore": 8,
+      "reviews": [
+        {
+          "idUser": "3",
+          "comment": "Muy emotivo",
+          "score": 8
+        }
+      ],
+      "bookurl": "https://example.com/leer/3"
+    },
+    {
+      "id": "4",
+      "name": "Aventuras en la Selva",
+      "summary": "Explorando los misterios de la selva",
+      "category": "Aventura",
+      "img": "https://example.com/aventura.jpg",
+      "views": 60,
+      "totalScore": 7.2,
+      "reviews": [
+        {
+          "idUser": "4",
+          "comment": "Muy emocionante",
+          "score": 7
+        }
+      ],
+      "bookurl": "https://example.com/leer/4"
+    },
+    {
+      "id": "5",
+      "name": "El Código Da Vinci",
+      "summary": "Un thriller histórico lleno de misterios",
+      "category": "Misterio",
+      "views": 120,
+      "totalScore": 8.5,
+      "reviews": [
+        {
+          "idUser": "5",
+          "comment": "Un clásico imperdible",
+          "score": 9
+        }
+      ],
+      "bookurl": "https://example.com/leer/5"
+    },
+    {
+      "id": "6",
+      "name": "1984",
+      "summary": "Una distopía sobre el control totalitario",
+      "category": "Ciencia Ficción",
+      "views": 150,
+      "totalScore": 9.2,
+      "reviews": [
+        {
+          "idUser": "6",
+          "comment": "Un libro que te hace reflexionar",
+          "score": 10
+        }
+      ],
+      "bookurl": "https://example.com/leer/6"
+    },
+    {
+      "id": "7",
+      "name": "Orgullo y Prejuicio",
+      "summary": "Una clásica historia de amor y sociedad",
+      "category": "Romance",
+      "views": 85,
+      "totalScore": 8.8,
+      "reviews": [
+        {
+          "idUser": "7",
+          "comment": "Una obra maestra de la literatura",
+          "score": 9
+        }
+      ],
+      "bookurl": "https://example.com/leer/7"
+    },
+    {
+      "id": "3124",
+      "name": "Libro de Terror",
+      "summary": "Resumen del libro de terror",
+      "category": "Terror",
+      "views": 100,
+      "totalScore": 9,
+      "reviews": [
+        {
+          "idUser": "1",
+          "comment": "Excelente libro de terror",
+          "score": 9
+        }
+      ],
+      "bookurl": "https://example.com/leer/1"
+    },
+    {
+      "id": "4321",
+      "name": "Libro de Terror",
+      "summary": "Resumen del libro de terror",
+      "category": "Terror",
+      "views": 100,
+      "totalScore": 9,
+      "reviews": [
+        {
+          "idUser": "1",
+          "comment": "Excelente libro de terror",
+          "score": 9
+        }
+      ],
+      "bookurl": "https://example.com/leer/1"
+    },
+    {
+      "id": "7865",
+      "name": "Libro de Terror",
+      "summary": "Resumen del libro de terror",
+      "category": "Terror",
+      "views": 100,
+      "totalScore": 9,
+      "reviews": [
+        {
+          "idUser": "1",
+          "comment": "Excelente libro de terror",
+          "score": 9
+        }
+      ],
+      "bookurl": "https://example.com/leer/1"
+    },
+    {
+      "id": "ads",
+      "name": "Libro de Terror",
+      "summary": "Resumen del libro de terror",
+      "category": "Terror",
+      "views": 100,
+      "totalScore": 9,
+      "reviews": [
+        {
+          "idUser": "1",
+          "comment": "Excelente libro de terror",
+          "score": 9
+        }
+      ],
+      "bookurl": "https://example.com/leer/1"
+    },
+    {
+      "id": "hdfg",
+      "name": "Libro de Terror",
+      "summary": "Resumen del libro de terror",
+      "category": "Terror",
+      "views": 100,
+      "totalScore": 9,
+      "reviews": [
+        {
+          "idUser": "1",
+          "comment": "Excelente libro de terror",
+          "score": 9
+        }
+      ],
+      "bookurl": "https://example.com/leer/1"
+    },
+    {
+      "id": "123jy",
+      "name": "Libro de Terror",
+      "summary": "Resumen del libro de terror",
+      "category": "Terror",
+      "views": 100,
+      "totalScore": 9,
+      "reviews": [
+        {
+          "idUser": "1",
+          "comment": "Excelente libro de terror",
+          "score": 9
+        }
+      ],
+      "bookurl": "https://example.com/leer/1"
+    },
+    {
+      "id": "7usdf",
+      "name": "Libro de Terror",
+      "summary": "Resumen del libro de terror",
+      "category": "Terror",
+      "views": 100,
+      "totalScore": 9,
+      "reviews": [
+        {
+          "idUser": "1",
+          "comment": "Excelente libro de terror",
+          "score": 9
+        }
+      ],
+      "bookurl": "https://example.com/leer/1"
+    },
+    {
+      "id": "kgcasd",
+      "name": "Libro de Terror",
+      "summary": "Resumen del libro de terror",
+      "category": "Terror",
+      "views": 100,
+      "totalScore": 9,
+      "reviews": [
+        {
+          "idUser": "1",
+          "comment": "Excelente libro de terror",
+          "score": 9
+        }
+      ],
+      "bookurl": "https://example.com/leer/1"
+    },
+    {
+      "id": "1ty4w23",
+      "name": "Libro de Terror",
+      "summary": "Resumen del libro de terror",
+      "category": "Terror",
+      "views": 100,
+      "totalScore": 9,
+      "reviews": [
+        {
+          "idUser": "1",
+          "comment": "Excelente libro de terror",
+          "score": 9
+        }
+      ],
+      "bookurl": "https://example.com/leer/1"
+    },
+    {
+      "id": "124ghaw34527",
+      "name": "Libro de Terror",
+      "summary": "Resumen del libro de terror",
+      "category": "Terror",
+      "views": 100,
+      "totalScore": 9,
+      "reviews": [
+        {
+          "idUser": "1",
+          "comment": "Excelente libro de terror",
+          "score": 9
+        }
+      ],
+      "bookurl": "https://example.com/leer/1"
+    },
+    {
+      "id": "12456ua23",
+      "name": "Libro de Terror",
+      "summary": "Resumen del libro de terror",
+      "category": "Terror",
+      "views": 100,
+      "totalScore": 9,
+      "reviews": [
+        {
+          "idUser": "1",
+          "comment": "Excelente libro de terror",
+          "score": 9
+        }
+      ],
+      "bookurl": "https://example.com/leer/1"
+    },
+    {
+      "id": "42354gdc",
+      "name": "Libro de Terror",
+      "summary": "Resumen del libro de terror",
+      "category": "Terror",
+      "views": 100,
+      "totalScore": 9,
+      "reviews": [
+        {
+          "idUser": "1",
+          "comment": "Excelente libro de terror",
+          "score": 9
+        }
+      ],
+      "bookurl": "https://example.com/leer/1"
+    },
+    {
+      "id": "432b45",
+      "name": "Libro de Terror",
+      "summary": "Resumen del libro de terror",
+      "category": "Terror",
+      "views": 100,
+      "totalScore": 9,
+      "reviews": [
+        {
+          "idUser": "1",
+          "comment": "Excelente libro de terror",
+          "score": 9
+        }
+      ],
+      "bookurl": "https://example.com/leer/1"
+    },
+    {
+      "id": "42134grevsz",
+      "name": "Libro de Terror",
+      "summary": "Resumen del libro de terror",
+      "category": "Terror",
+      "views": 100,
+      "totalScore": 9,
+      "reviews": [
+        {
+          "idUser": "1",
+          "comment": "Excelente libro de terror",
+          "score": 9
+        }
+      ],
+      "bookurl": "https://example.com/leer/1"
+    },
+    {
+      "id": "124thbhjmiu24",
+      "name": "Libro de Terror",
+      "summary": "Resumen del libro de terror",
+      "category": "Terror",
+      "views": 100,
+      "totalScore": 9,
+      "reviews": [
+        {
+          "idUser": "1",
+          "comment": "Excelente libro de terror",
+          "score": 9
+        }
+      ],
+      "bookurl": "https://example.com/leer/1"
+    },
+    {
+      "id": "2135h5tvers",
+      "name": "Libro de Terror",
+      "summary": "Resumen del libro de terror",
+      "category": "Terror",
+      "views": 100,
+      "totalScore": 9,
+      "reviews": [
+        {
+          "idUser": "1",
+          "comment": "Excelente libro de terror",
+          "score": 9
+        }
+      ],
+      "bookurl": "https://example.com/leer/1"
+    },
+    {
+      "id": "1235ysWCVHS",
+      "name": "Libro de Terror",
+      "summary": "Resumen del libro de terror",
+      "category": "Terror",
+      "views": 100,
+      "totalScore": 9,
+      "reviews": [
+        {
+          "idUser": "1",
+          "comment": "Excelente libro de terror",
+          "score": 9
+        }
+      ],
+      "bookurl": "https://example.com/leer/1"
+    },
+    {
+      "id": "42145t76beser",
+      "name": "Libro de Terror",
+      "summary": "Resumen del libro de terror",
+      "category": "Terror",
+      "views": 100,
+      "totalScore": 9,
+      "reviews": [
+        {
+          "idUser": "1",
+          "comment": "Excelente libro de terror",
+          "score": 9
+        }
+      ],
+      "bookurl": "https://example.com/leer/1"
+    },
+    {
+      "id": "1243vamjhty",
+      "name": "Libro de Terror",
+      "summary": "Resumen del libro de terror",
+      "category": "Terror",
+      "views": 100,
+      "totalScore": 9,
+      "reviews": [
+        {
+          "idUser": "1",
+          "comment": "Excelente libro de terror",
+          "score": 9
+        }
+      ],
+      "bookurl": "https://example.com/leer/1"
+    },
+    {
+      "id": "98345234sdfxcv",
+      "name": "Libro de Terror",
+      "summary": "Resumen del libro de terror",
+      "category": "Terror",
+      "views": 100,
+      "totalScore": 9,
+      "reviews": [
+        {
+          "idUser": "1",
+          "comment": "Excelente libro de terror",
+          "score": 9
+        }
+      ],
+      "bookurl": "https://example.com/leer/1"
+    },
+    {
+      "id": "567234sdfhgyui3452312",
+      "name": "Libro de Terror",
+      "summary": "Resumen del libro de terror",
+      "category": "Terror",
+      "views": 100,
+      "totalScore": 9,
+      "reviews": [
+        {
+          "idUser": "1",
+          "comment": "Excelente libro de terror",
+          "score": 9
+        }
+      ],
+      "bookurl": "https://example.com/leer/1"
+    },
+    {
+      "id": "123454567786bfsdfasdzxc",
+      "name": "Libro de Terror",
+      "summary": "Resumen del libro de terror",
+      "category": "Terror",
+      "views": 100,
+      "totalScore": 9,
+      "reviews": [
+        {
+          "idUser": "1",
+          "comment": "Excelente libro de terror",
+          "score": 9
+        }
+      ],
+      "bookurl": "https://example.com/leer/1"
+    },
+    {
+      "id": "minku15eu",
+      "name": "La vida despues de la muerte",
+      "summary": "El Rey Grey tiene una fuerza, riqueza y prestigio incomparables en un mundo gobernado a través de la habilidad marcial. Sin embargo, la soledad permanece muy cerca de aquellos con gran poder. Bajo el glamour externo de un poderoso rey, bajo un caparazón se esconde un hombre carente de propósito y voluntad.\n\nReencarnado en un nuevo mundo lleno de magia y monstruos, el rey tiene una segunda oportunidad para revivir su vida. Sin embargo, corregir los errores de su pasado no será su único desafío. Debajo de la paz y la prosperidad de su nuevo mundo hay una corriente subterránea que amenaza destruir todo por lo que ha trabajado, cuestionando su papel y la razón por la que ha nacido de nuevo.",
+      "category": "Fantasía",
+      "bookurl": "https://novelasligera.com/novela/la-vida-despues-de-la-muerte/",
+      "views": 7,
+      "totalScore": 1,
+      "reviews": []
+    },
+    {
+      "id": "8hx56ia06",
+      "name": "El Reino De Las Hadas",
+      "summary": "Para Melody Lewis, la palabra delicada no iba con ella. Su comportamiento le hacía vestirse de modo masculino. Su vida dio vuelta, al encontrarse con un chico herido en un callejón. Sin pensarlo dos veces, lo llevó a su casa, dandole una hospedaje. “No puedo dejarlo solo en este estado”, esas fueron las palabras que se dijo al verlo postrado en su cama. Lo que ella nunca imaginó que ese chico atractivo, no era alguien normal. Sino un hada. Alguien que le cambiará todas sus teorías de la vida y le hará experimentar nuevas emociones.",
+      "category": "Romance",
+      "bookurl": "https://booknet.com/es/reader/el-reino-de-las-hadas-b72085",
+      "views": 77,
+      "totalScore": [],
+      "reviews": []
+    },
+    {
+      "id": "j602j09ki",
+      "name": "132",
+      "summary": "123",
+      "category": "Terror",
+      "bookurl": "https://123/123",
+      "views": 62,
+      "totalScore": [],
+      "reviews": []
+    },
+    {
+      "id": "rve6fp89p",
+      "name": "xsasd",
+      "summary": "asdasd",
+      "category": "Fantasía",
+      "bookurl": "https://12233/1231s3",
+      "views": 45,
+      "totalScore": [],
+      "reviews": []
+    },
+    {
+      "id": "5k0xfy6f6",
+      "name": "123",
+      "summary": "321",
+      "category": "Ciencia Ficción",
+      "bookurl": "https://12233/1231s321233",
+      "views": 89,
+      "totalScore": [],
+      "reviews": []
+    },
+    {
+      "id": "qbl0yql5g",
+      "name": "Libro1",
+      "summary": "Descripcion1",
+      "category": "Terror",
+      "bookurl": "https://Libro1/Descripcion1",
+      "views": 4,
+      "totalScore": [],
+      "reviews": []
+    },
+    {
+      "id": "aw4968nh3",
+      "name": "Libro123",
+      "summary": "Libro123",
+      "category": "Terror",
+      "bookurl": "https://Libro123.com",
+      "views": 7,
+      "totalScore": [],
+      "reviews": []
+    },
+    {
+      "id": "qomuprc48",
+      "name": "Librox",
+      "summary": "Descripcionx",
+      "category": "Ciencia Ficción",
+      "bookurl": "https://Librox/Descripcionx",
+      "views": 7,
+      "totalScore": [],
+      "reviews": []
+    }
+  ]
+}

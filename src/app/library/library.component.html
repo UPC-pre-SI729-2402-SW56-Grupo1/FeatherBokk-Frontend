@@ -1,0 +1,58 @@
+<div class="library-container">
+  <div class="column">
+    <h2>{{ title }}</h2>
+
+    <div class="search-container">
+      <input
+        type="text"
+        [attr.placeholder]="'library.searchBook' | translate"
+        class="search-book-input"
+        [(ngModel)]="searchQuery"
+        (input)="searchBooks()"
+      />
+      <img src="assets/search-icon.png" alt="Search icon" class="search-icon" />
+    </div>
+
+    <div *ngIf="title === 'Library'" class="filter-container">
+      <select (change)="onCategoryChange($event)" class="filter select-categories">
+        <option value="">{{ "library.allCategories" | translate }}</option>
+        <option *ngFor="let category of categories" [value]="category">
+          {{ category }}
+        </option>
+      </select>
+    </div>
+    <div *ngIf="title === 'History'" class="filter-container">
+      <button (click)="sortBy('lastTimeRead')"  class="filter order-button">
+        {{ "library.sortByLastLecture" | translate }}
+      </button>
+    </div>
+    <div *ngIf="title === 'Uploaded Books'" class="filter-container">
+      <button (click)="sortBy('uploadedDate')" class="filter order-button">
+        {{ "library.sortByUploadDate" | translate }}
+      </button>
+    </div>
+
+    <ul class="book-list">
+      <li *ngFor="let book of paginatedBooks">
+        <div class="book-title" (click)="goToBookDetail(book.id)">{{ book.name }}</div>
+        <div *ngIf="title !== 'Saved Books'" class="button-save-book" (click)="saveBook(book.id)">
+          <div class="material-symbols-outlined">bookmark</div>
+        </div>
+        
+        <button *ngIf="title === 'Saved Books'" (click)="removeBook(book.id)" class="remove-button">
+          {{ "library.remove" | translate }}
+        </button>
+      </li>
+    </ul>
+
+    <div class="pagination-controls">
+      <button (click)="prevPage()" [disabled]="currentPage === 1">
+        {{ "library.previous" | translate }}
+      </button>
+      <span>{{ "library.page" | translate }} {{ currentPage }} {{ "library.of" | translate }} {{ totalPages }}</span>
+      <button (click)="nextPage()" [disabled]="currentPage === totalPages">
+        {{ "library.next" | translate }}
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,17 +1,17 @@
 import { Component } from '@angular/core';
-import {Router} from "@angular/router";
+import { Router } from '@angular/router';
+import { EventDataService } from '../shared/services/http-common.service';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [],
   templateUrl: './register.component.html',
-  styleUrl: './register.component.css'
+  styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
   hidePassword: boolean = true;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private eventDataService: EventDataService) {}
 
   togglePasswordVisibility() {
     this.hidePassword = !this.hidePassword;
@@ -26,15 +26,22 @@ export class RegisterComponent {
     const phone = (form.querySelector('#phone') as HTMLInputElement).value;
     const password = (form.querySelector('#password') as HTMLInputElement).value;
 
-    console.log('Username:', username);
-    console.log('Email:', email);
-    console.log('Phone:', phone);
-    console.log('Password:', password);
+    const newUser = {
+      id: Math.random().toString(36).substr(2, 9),
+      username,
+      email,
+      phone,
+      password,
+      subscriptionLevel: "0",
+      booksHistory: [],
+      uploadedBooks: [],
+      savedBooks: []
+    };
 
-    if (username && email && phone && password) {
-      this.router.navigate(['/home']);
-    } else {
-      console.log('Por favor, completa todos los campos');
-    }
+    this.eventDataService.registerUser(newUser).subscribe(response => {
+      if (response) {
+        this.router.navigate(['/login']);
+      }
+    });
   }
 }

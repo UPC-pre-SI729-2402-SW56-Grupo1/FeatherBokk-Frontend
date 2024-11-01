@@ -1,31 +1,36 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { ReviewItemComponent } from '../review-item/review-item.component';
+import { TranslateModule } from '@ngx-translate/core';
+import {
+  EventDataService,
+  User,
+} from '../../shared/services/http-common.service';
+
+interface Review {
+  idUser: string;
+  comment: string;
+  score: number;
+  username?: string;
+}
 
 @Component({
   selector: 'app-book-reviews',
   standalone: true,
-  imports: [
-    CommonModule,
-    ReviewItemComponent
-  ],
+  imports: [CommonModule, ReviewItemComponent, TranslateModule],
   templateUrl: './book-reviews.component.html',
-  styleUrl: './book-reviews.component.css'
+  styleUrls: ['./book-reviews.component.css'],
 })
 export class BookReviewsComponent implements OnInit {
+  @Input() reviews: Review[] = [];
 
-  reviews = [
-    { text: 'Me gustó mucho', author: 'Usuario 1' },
-    { text: 'Me encanta como se desarrollan las historias', author: 'Usuario 2' },
-    { text: 'Logró hacerme sentir miedo', author: 'Usuario 3' },
-    { text: 'El mejor libro que leí', author: 'Usuario 4' },
-    { text: 'Qué buen libro', author: 'Usuario 5' },
-  ];
+  constructor(private userService: EventDataService) {}
 
-  constructor() { }
-  
   ngOnInit(): void {
+    this.reviews.forEach((review) => {
+      this.userService.getUserById(review.idUser).subscribe((user: User) => {
+        review.username = user.username || '';
+      });
+    });
   }
-
 }

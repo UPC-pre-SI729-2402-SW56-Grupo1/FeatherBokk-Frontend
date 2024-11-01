@@ -1,0 +1,80 @@
+{
+  "header": {
+    "title": "Feather Book",
+    "library": "Library",
+    "chatAuthors": "Chat with Authors",
+    "subscription": "Subscription",
+    "login": "Login",
+    "register": "Register",
+    "welcome": "Welcome,",
+    "logout": "Logout"
+  },
+  "footer": {
+    "contact": "Contact us: featherbook@gmail.com"
+  },
+  "subscription": {
+    "title": "Subscription",
+    "level1": {
+      "title": "Level 1",
+      "price": "Price: $0",
+      "feature1": "Access to a basic section of books, articles, and other content",
+      "feature2": "View the most outstanding comments and rating left by each book",
+      "feature3": "Mark, highlight, and leave notes"
+    },
+    "level2": {
+      "title": "Level 2",
+      "price": "Price: $9.99/month",
+      "feature1": "Access to forums of a specific book",
+      "feature2": "Book or article recommendations according to genres read",
+      "feature3": "Comment and rate books"
+    },
+    "level3": {
+      "title": "Level 3",
+      "price": "Price: $29.99/month",
+      "feature1": "To be able to talk to the author of the book, only those authors who wish",
+      "feature2": "Exclusive discounts on books only for members",
+      "feature3": "Exclusive pre-sale and early access to new book titles"
+    },
+    "buyButton": "Buy now"
+  },
+  "userProfile": {
+    "email": "Email",
+    "phone": "Phone",
+    "subscriptionLevel": "Subscription level",
+    "level": "Level",
+    "booksHistory": "Books read history",
+    "uploadedBooks": "Uploaded books",
+    "savedBooks": "Saved books",
+    "uploadBook": "Upload book"
+  },
+  "bookPreview": {
+    "reviews": "Reviews",
+    "read": "Read",
+    "form": {
+      "title": "Leave your comment and rating",
+      "comment": "Your comment",
+      "rating": "Rating (1-10)",
+      "send": "Send"
+    }
+  },
+  "library": {
+    "searchBook": "Search book",
+    "allCategories": "All categories",
+    "sortByLastLecture": "Sort by last lecture",
+    "sortByUploadDate": "Sort by upload date",
+    "remove": "Remove",
+    "previous": "Previous",
+    "next": "Next",
+    "page": "Page",
+    "of": "of"
+  },
+  "uploadBook": {
+    "title": "Upload book",
+    "name": "Name",
+    "summary": "Summary",
+    "category": "Category",
+    "selectCategory": "Select a category",
+    "url": "Book URL",
+    "uploadBook": "Upload book"
+  }
+}
