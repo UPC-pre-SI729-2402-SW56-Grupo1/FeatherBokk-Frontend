@@ -29,10 +29,23 @@ export interface Book {
   providedIn: 'root',
 })
 export class EventDataService {
-  private apiUrl = 'https://672559c6c39fedae05b48fbf.mockapi.io';
+  private apiUrl = 'https://672559c6c39fedae05b48fbf.mockapi.io/';
   private authTokenKey = 'auth_token';
 
   constructor(private http: HttpClient) {}
+
+  generateId(length: number = 10): string {
+    const characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    let result = '';
+  
+    for (let i = 0; i < length; i++) {
+      const randomIndex = Math.floor(Math.random()   
+   * characters.length);
+      result += characters.charAt(randomIndex);
+    }
+  
+    return result;   
+  }
 
   getUsers(): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}/users`);
@@ -47,7 +60,10 @@ export class EventDataService {
   }
 
   registerUser(userData: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/users`, userData);
+    const userId = this.generateId();
+    const newUser = { ...userData, id: userId };
+  
+    return this.http.post(`${this.apiUrl}/users`, newUser);
   }
 
   loginUser(email: string, password: string): Observable<any> {
@@ -88,11 +104,31 @@ export class EventDataService {
   }
 
   updateBook(bookId: string, data: Partial<Book>): Observable<any> {
-    return this.http.patch(`${this.apiUrl}/books/${bookId}`, data);
+    return this.http.put(`${this.apiUrl}/books/${bookId}`, data);
   }
 
-  addBook(book: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/books`, book);
+  addBook(book: any, userId: string): Observable<any> {
+    const bookId = this.generateId();
+    const newBook = { ...book, id: bookId };
+  
+    return this.http.post(`${this.apiUrl}/books`, newBook).pipe(
+      switchMap((createdBook: any) => {
+        const uploadedBook = {
+          idBook: createdBook.id,
+          uploadedDate: this.formatDate(new Date())
+        };
+  
+        return this.http.get<User>(`${this.apiUrl}/users/${userId}`).pipe(
+          switchMap((user) => {
+            const updatedUploadedBooks = [...user.uploadedBooks, uploadedBook];
+            return this.http.put(`${this.apiUrl}/users/${userId}`, {
+              ...user,
+              uploadedBooks: updatedUploadedBooks
+            });
+          })
+        );
+      })
+    );
   }
 
   addUploadedBookToUser(userId: string, bookId: string): Observable<any> {
@@ -104,7 +140,7 @@ export class EventDataService {
     return this.http.get<User>(`${this.apiUrl}/users/${userId}`).pipe(
       switchMap((user) => {
         const updatedUploadedBooks = [...user.uploadedBooks, uploadedBook];
-        return this.http.patch(`${this.apiUrl}/users/${userId}`, {
+        return this.http.put(`${this.apiUrl}/users/${userId}`, {
           uploadedBooks: updatedUploadedBooks,
         });
       })
@@ -119,12 +155,12 @@ export class EventDataService {
   }
 
   updateSubscriptionLevel(userId: string, newLevel: string): Observable<any> {
-    return this.http.patch(`${this.apiUrl}/users/${userId}`, {
+    return this.http.put(`${this.apiUrl}/users/${userId}`, {
       subscriptionLevel: newLevel,
     });
   }
   updateUser(userId: string, data: Partial<User>): Observable<any> {
-    return this.http.patch(`${this.apiUrl}/users/${userId}`, data);
+    return this.http.put(`${this.apiUrl}/users/${userId}`, data);
   }
 
   logout() {
