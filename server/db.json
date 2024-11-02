@@ -55,7 +55,7 @@
       "email": "juan123@gmail.com",
       "phone": "123",
       "password": "juan123",
-      "subscriptionLevel": "1",
+      "subscriptionLevel": "2",
       "booksHistory": [
         {
           "idBook": "324532",
@@ -82,6 +82,10 @@
         {
           "idBook": "aw4968nh3",
           "uploadedDate": "01/11/2024"
+        },
+        {
+          "idBook": "utx7giobw",
+          "uploadedDate": "01/11/2024"
         }
       ],
       "savedBooks": [
@@ -100,6 +104,44 @@
           "uploadedDate": "01/11/2024"
         }
       ]
+    },
+    {
+      "id": "8b6yvhh1u",
+      "username": "Cristian",
+      "email": "cristian@gmail.com",
+      "phone": "123342",
+      "password": "cristian@gmail.com",
+      "subscriptionLevel": "3",
+      "booksHistory": [],
+      "uploadedBooks": [],
+      "savedBooks": []
+    },
+    {
+      "id": "giuc9q9nh",
+      "username": "cristian",
+      "email": "cristian@gmail.com",
+      "phone": "125432",
+      "password": "cristian@gmail.com",
+      "subscriptionLevel": "0",
+      "booksHistory": [],
+      "uploadedBooks": [],
+      "savedBooks": []
+    },
+    {
+      "id": "pBpvQ131DA",
+      "username": "ccccc@gmail.com",
+      "email": "ccccc@gmail.com",
+      "phone": "ccccc@gmail.com",
+      "password": "ccccc@gmail.com",
+      "subscriptionLevel": "1",
+      "booksHistory": [],
+      "uploadedBooks": [
+        {
+          "idBook": "WFSbuEpSt5",
+          "uploadedDate": "02/11/2024"
+        }
+      ],
+      "savedBooks": []
     }
   ],
   "books": [
@@ -109,7 +151,7 @@
       "summary": "Resumen del libro de terror",
       "category": "Terror",
       "views": 100,
-      "totalScore": 9.5,
+      "totalScore": 8.67,
       "reviews": [
         {
           "idUser": "1",
@@ -120,7 +162,13 @@
         {
           "idUser": "1",
           "comment": "123",
-          "score": 10
+          "score": 10,
+          "username": "user1"
+        },
+        {
+          "idUser": "zi70t28xi",
+          "comment": "Me gusto mucho",
+          "score": 7
         }
       ],
       "bookurl": "https://example.com/leer/1"
@@ -654,6 +702,36 @@
       "bookurl": "https://Librox/Descripcionx",
       "views": 7,
       "totalScore": [],
+      "reviews": []
+    },
+    {
+      "id": "3ajfba7s2",
+      "name": "Libro x",
+      "summary": "Libro x",
+      "category": "Fantasía",
+      "bookurl": "https://123/123",
+      "views": 89,
+      "totalScore": [],
+      "reviews": []
+    },
+    {
+      "id": "utx7giobw",
+      "name": "Libro 123",
+      "summary": "Libro 123",
+      "category": "Ciencia Ficción",
+      "bookurl": "https://123/123",
+      "views": 0,
+      "totalScore": [],
+      "reviews": []
+    },
+    {
+      "id": "WFSbuEpSt5",
+      "name": "ccccc@gmail.com",
+      "summary": "ccccc@gmail.com",
+      "category": "Fantasía",
+      "bookurl": "http://localhost:4200/upload-book",
+      "views": 79,
+      "totalScore": 0,
       "reviews": []
     }
   ]

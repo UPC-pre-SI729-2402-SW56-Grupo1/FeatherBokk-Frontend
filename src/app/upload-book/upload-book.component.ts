@@ -37,28 +37,23 @@ export class UploadBookComponent {
   onSubmit() {
     if (this.bookForm.valid && this.user) {
       const newBook = {
-        id: this.generateId(),
+        id: this.bookService.generateId(),
         name: this.bookForm.value.name,
         summary: this.bookForm.value.summary,
         category: this.bookForm.value.category,
         bookurl: this.bookForm.value.bookurl,
         views: this.generateRandomViews(),
-        totalScore: [],
+        totalScore: 0,
         reviews: []
       };
 
-      this.bookService.addBook(newBook).subscribe(() => {
-        this.bookService.addUploadedBookToUser(this.user!.id, newBook.id).subscribe(() => {
-          this.router.navigate(['/uploaded-books']);
-        });
+      this.bookService.addBook(newBook, this.user.id).subscribe(() => {
+        alert('Book uploaded successfully');
+        this.router.navigate(['/uploaded-books']);
       });
     }
   }
-
-  private generateId(): string {
-    return Math.random().toString(36).substr(2, 9);
-  }
-
+  
   private generateRandomViews(): number {
     return Math.floor(Math.random() * 100);
   }
