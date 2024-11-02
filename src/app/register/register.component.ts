@@ -27,12 +27,12 @@ export class RegisterComponent {
     const password = (form.querySelector('#password') as HTMLInputElement).value;
 
     const newUser = {
-      id: Math.random().toString(36).substr(2, 9),
+      id: this.eventDataService.generateId(),
       username,
       email,
       phone,
       password,
-      subscriptionLevel: "0",
+      subscriptionLevel: "1",
       booksHistory: [],
       uploadedBooks: [],
       savedBooks: []
