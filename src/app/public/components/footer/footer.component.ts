@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
-import {MatIcon} from "@angular/material/icon";
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
   imports: [
-    MatIcon,
     TranslateModule
   ],
   templateUrl: './footer.component.html',

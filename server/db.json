@@ -106,17 +106,6 @@
       ]
     },
     {
-      "id": "8b6yvhh1u",
-      "username": "Cristian",
-      "email": "cristian@gmail.com",
-      "phone": "123342",
-      "password": "cristian@gmail.com",
-      "subscriptionLevel": "3",
-      "booksHistory": [],
-      "uploadedBooks": [],
-      "savedBooks": []
-    },
-    {
       "id": "giuc9q9nh",
       "username": "cristian",
       "email": "cristian@gmail.com",
@@ -125,22 +114,6 @@
       "subscriptionLevel": "0",
       "booksHistory": [],
       "uploadedBooks": [],
-      "savedBooks": []
-    },
-    {
-      "id": "pBpvQ131DA",
-      "username": "ccccc@gmail.com",
-      "email": "ccccc@gmail.com",
-      "phone": "ccccc@gmail.com",
-      "password": "ccccc@gmail.com",
-      "subscriptionLevel": "1",
-      "booksHistory": [],
-      "uploadedBooks": [
-        {
-          "idBook": "WFSbuEpSt5",
-          "uploadedDate": "02/11/2024"
-        }
-      ],
       "savedBooks": []
     }
   ],
@@ -151,7 +124,7 @@
       "summary": "Resumen del libro de terror",
       "category": "Terror",
       "views": 100,
-      "totalScore": 8.67,
+      "totalScore": 9.5,
       "reviews": [
         {
           "idUser": "1",
@@ -162,13 +135,7 @@
         {
           "idUser": "1",
           "comment": "123",
-          "score": 10,
-          "username": "user1"
-        },
-        {
-          "idUser": "zi70t28xi",
-          "comment": "Me gusto mucho",
-          "score": 7
+          "score": 10
         }
       ],
       "bookurl": "https://example.com/leer/1"
@@ -273,366 +240,26 @@
       "bookurl": "https://example.com/leer/7"
     },
     {
-      "id": "3124",
-      "name": "Libro de Terror",
-      "summary": "Resumen del libro de terror",
-      "category": "Terror",
-      "views": 100,
-      "totalScore": 9,
-      "reviews": [
-        {
-          "idUser": "1",
-          "comment": "Excelente libro de terror",
-          "score": 9
-        }
-      ],
-      "bookurl": "https://example.com/leer/1"
-    },
-    {
-      "id": "4321",
-      "name": "Libro de Terror",
-      "summary": "Resumen del libro de terror",
-      "category": "Terror",
-      "views": 100,
-      "totalScore": 9,
-      "reviews": [
-        {
-          "idUser": "1",
-          "comment": "Excelente libro de terror",
-          "score": 9
-        }
-      ],
-      "bookurl": "https://example.com/leer/1"
-    },
-    {
-      "id": "7865",
-      "name": "Libro de Terror",
-      "summary": "Resumen del libro de terror",
-      "category": "Terror",
-      "views": 100,
-      "totalScore": 9,
-      "reviews": [
-        {
-          "idUser": "1",
-          "comment": "Excelente libro de terror",
-          "score": 9
-        }
-      ],
-      "bookurl": "https://example.com/leer/1"
-    },
-    {
-      "id": "ads",
-      "name": "Libro de Terror",
-      "summary": "Resumen del libro de terror",
-      "category": "Terror",
-      "views": 100,
-      "totalScore": 9,
-      "reviews": [
-        {
-          "idUser": "1",
-          "comment": "Excelente libro de terror",
-          "score": 9
-        }
-      ],
-      "bookurl": "https://example.com/leer/1"
-    },
-    {
-      "id": "hdfg",
-      "name": "Libro de Terror",
-      "summary": "Resumen del libro de terror",
-      "category": "Terror",
-      "views": 100,
-      "totalScore": 9,
-      "reviews": [
-        {
-          "idUser": "1",
-          "comment": "Excelente libro de terror",
-          "score": 9
-        }
-      ],
-      "bookurl": "https://example.com/leer/1"
-    },
-    {
-      "id": "123jy",
-      "name": "Libro de Terror",
-      "summary": "Resumen del libro de terror",
-      "category": "Terror",
-      "views": 100,
-      "totalScore": 9,
-      "reviews": [
-        {
-          "idUser": "1",
-          "comment": "Excelente libro de terror",
-          "score": 9
-        }
-      ],
-      "bookurl": "https://example.com/leer/1"
-    },
-    {
-      "id": "7usdf",
-      "name": "Libro de Terror",
-      "summary": "Resumen del libro de terror",
-      "category": "Terror",
-      "views": 100,
-      "totalScore": 9,
-      "reviews": [
-        {
-          "idUser": "1",
-          "comment": "Excelente libro de terror",
-          "score": 9
-        }
-      ],
-      "bookurl": "https://example.com/leer/1"
-    },
-    {
-      "id": "kgcasd",
-      "name": "Libro de Terror",
-      "summary": "Resumen del libro de terror",
-      "category": "Terror",
-      "views": 100,
-      "totalScore": 9,
-      "reviews": [
-        {
-          "idUser": "1",
-          "comment": "Excelente libro de terror",
-          "score": 9
-        }
-      ],
-      "bookurl": "https://example.com/leer/1"
-    },
-    {
-      "id": "1ty4w23",
-      "name": "Libro de Terror",
-      "summary": "Resumen del libro de terror",
-      "category": "Terror",
-      "views": 100,
-      "totalScore": 9,
-      "reviews": [
-        {
-          "idUser": "1",
-          "comment": "Excelente libro de terror",
-          "score": 9
-        }
-      ],
-      "bookurl": "https://example.com/leer/1"
-    },
-    {
-      "id": "124ghaw34527",
-      "name": "Libro de Terror",
-      "summary": "Resumen del libro de terror",
-      "category": "Terror",
-      "views": 100,
-      "totalScore": 9,
-      "reviews": [
-        {
-          "idUser": "1",
-          "comment": "Excelente libro de terror",
-          "score": 9
-        }
-      ],
-      "bookurl": "https://example.com/leer/1"
-    },
-    {
-      "id": "12456ua23",
-      "name": "Libro de Terror",
-      "summary": "Resumen del libro de terror",
-      "category": "Terror",
-      "views": 100,
-      "totalScore": 9,
-      "reviews": [
-        {
-          "idUser": "1",
-          "comment": "Excelente libro de terror",
-          "score": 9
-        }
-      ],
-      "bookurl": "https://example.com/leer/1"
-    },
-    {
-      "id": "42354gdc",
-      "name": "Libro de Terror",
-      "summary": "Resumen del libro de terror",
-      "category": "Terror",
-      "views": 100,
-      "totalScore": 9,
-      "reviews": [
-        {
-          "idUser": "1",
-          "comment": "Excelente libro de terror",
-          "score": 9
-        }
-      ],
-      "bookurl": "https://example.com/leer/1"
-    },
-    {
-      "id": "432b45",
-      "name": "Libro de Terror",
-      "summary": "Resumen del libro de terror",
-      "category": "Terror",
-      "views": 100,
-      "totalScore": 9,
-      "reviews": [
-        {
-          "idUser": "1",
-          "comment": "Excelente libro de terror",
-          "score": 9
-        }
-      ],
-      "bookurl": "https://example.com/leer/1"
-    },
-    {
-      "id": "42134grevsz",
-      "name": "Libro de Terror",
-      "summary": "Resumen del libro de terror",
-      "category": "Terror",
-      "views": 100,
-      "totalScore": 9,
-      "reviews": [
-        {
-          "idUser": "1",
-          "comment": "Excelente libro de terror",
-          "score": 9
-        }
-      ],
-      "bookurl": "https://example.com/leer/1"
-    },
-    {
-      "id": "124thbhjmiu24",
-      "name": "Libro de Terror",
-      "summary": "Resumen del libro de terror",
-      "category": "Terror",
-      "views": 100,
-      "totalScore": 9,
-      "reviews": [
-        {
-          "idUser": "1",
-          "comment": "Excelente libro de terror",
-          "score": 9
-        }
-      ],
-      "bookurl": "https://example.com/leer/1"
-    },
-    {
-      "id": "2135h5tvers",
-      "name": "Libro de Terror",
-      "summary": "Resumen del libro de terror",
-      "category": "Terror",
-      "views": 100,
-      "totalScore": 9,
-      "reviews": [
-        {
-          "idUser": "1",
-          "comment": "Excelente libro de terror",
-          "score": 9
-        }
-      ],
-      "bookurl": "https://example.com/leer/1"
-    },
-    {
-      "id": "1235ysWCVHS",
-      "name": "Libro de Terror",
-      "summary": "Resumen del libro de terror",
-      "category": "Terror",
-      "views": 100,
-      "totalScore": 9,
-      "reviews": [
-        {
-          "idUser": "1",
-          "comment": "Excelente libro de terror",
-          "score": 9
-        }
-      ],
-      "bookurl": "https://example.com/leer/1"
-    },
-    {
-      "id": "42145t76beser",
-      "name": "Libro de Terror",
-      "summary": "Resumen del libro de terror",
-      "category": "Terror",
-      "views": 100,
-      "totalScore": 9,
-      "reviews": [
-        {
-          "idUser": "1",
-          "comment": "Excelente libro de terror",
-          "score": 9
-        }
-      ],
-      "bookurl": "https://example.com/leer/1"
-    },
-    {
-      "id": "1243vamjhty",
-      "name": "Libro de Terror",
-      "summary": "Resumen del libro de terror",
-      "category": "Terror",
-      "views": 100,
-      "totalScore": 9,
-      "reviews": [
-        {
-          "idUser": "1",
-          "comment": "Excelente libro de terror",
-          "score": 9
-        }
-      ],
-      "bookurl": "https://example.com/leer/1"
-    },
-    {
-      "id": "98345234sdfxcv",
-      "name": "Libro de Terror",
-      "summary": "Resumen del libro de terror",
-      "category": "Terror",
-      "views": 100,
-      "totalScore": 9,
-      "reviews": [
-        {
-          "idUser": "1",
-          "comment": "Excelente libro de terror",
-          "score": 9
-        }
-      ],
-      "bookurl": "https://example.com/leer/1"
-    },
-    {
-      "id": "567234sdfhgyui3452312",
-      "name": "Libro de Terror",
-      "summary": "Resumen del libro de terror",
-      "category": "Terror",
-      "views": 100,
-      "totalScore": 9,
-      "reviews": [
-        {
-          "idUser": "1",
-          "comment": "Excelente libro de terror",
-          "score": 9
-        }
-      ],
-      "bookurl": "https://example.com/leer/1"
-    },
-    {
-      "id": "123454567786bfsdfasdzxc",
-      "name": "Libro de Terror",
-      "summary": "Resumen del libro de terror",
-      "category": "Terror",
-      "views": 100,
-      "totalScore": 9,
-      "reviews": [
-        {
-          "idUser": "1",
-          "comment": "Excelente libro de terror",
-          "score": 9
-        }
-      ],
-      "bookurl": "https://example.com/leer/1"
-    },
-    {
       "id": "minku15eu",
       "name": "La vida despues de la muerte",
       "summary": "El Rey Grey tiene una fuerza, riqueza y prestigio incomparables en un mundo gobernado a través de la habilidad marcial. Sin embargo, la soledad permanece muy cerca de aquellos con gran poder. Bajo el glamour externo de un poderoso rey, bajo un caparazón se esconde un hombre carente de propósito y voluntad.\n\nReencarnado en un nuevo mundo lleno de magia y monstruos, el rey tiene una segunda oportunidad para revivir su vida. Sin embargo, corregir los errores de su pasado no será su único desafío. Debajo de la paz y la prosperidad de su nuevo mundo hay una corriente subterránea que amenaza destruir todo por lo que ha trabajado, cuestionando su papel y la razón por la que ha nacido de nuevo.",
       "category": "Fantasía",
       "bookurl": "https://novelasligera.com/novela/la-vida-despues-de-la-muerte/",
       "views": 7,
-      "totalScore": 1,
-      "reviews": []
+      "totalScore": 9.75,
+      "reviews": [
+        {
+          "idUser": "zi70t28xi",
+          "comment": "Buena obra",
+          "score": 10,
+          "username": "juan"
+        },
+        {
+          "idUser": "8",
+          "comment": "Lo mejor que he visto",
+          "score": 9.5
+        }
+      ]
     },
     {
       "id": "8hx56ia06",
@@ -645,92 +272,42 @@
       "reviews": []
     },
     {
-      "id": "j602j09ki",
-      "name": "132",
-      "summary": "123",
-      "category": "Terror",
-      "bookurl": "https://123/123",
-      "views": 62,
-      "totalScore": [],
+      "id": "93v23dqdlm",
+      "name": "El ingenioso hidalgo, Don Quijote de la Mancha",
+      "summary": "El ingenioso hidalgo don Quijote de la Mancha narra las aventuras de Alonso Quijano, un hidalgo pobre que de tanto leer novelas de caballería acaba enloqueciendo y creyendo ser un caballero andante, nombrándose a sí mismo como don Quijote de la Mancha.",
+      "category": "Aventura",
+      "bookurl": "https://www.google.com.pe/books/edition/El_ingenioso_caballero_don_Quijote_de_la/qUlMAQAAIAAJ?hl=es-419&gbpv=0",
+      "views": 1392,
+      "totalScore": 0,
       "reviews": []
     },
     {
-      "id": "rve6fp89p",
-      "name": "xsasd",
-      "summary": "asdasd",
+      "id": "348d32hpylpf",
+      "name": "Harry Potter y la Piedra Filosofal",
+      "summary": "Harry Potter se ha quedado huérfano y vive en casa de sus abominables tíos y el insoportable primo Dudley. Harry se siente muy triste y solo, hasta que un buen día recibe una carta que cambiará su vida para siempre. En ella le comunican que ha sido aceptado como alumno en el Colegio Hogwarts de Magia. A partir de ese momento, la suerte de Harry da un vuelco espectacular. En esa escuela tan especial aprenderá encantamientos, trucos fabulosos y tácticas de defensa contra las malas artes. Se convertirá en el campeón escolar de Quidditch, especie de fútbol aéreo que se juega montado sobre escobas, y hará un puñado de buenos amigos... aunque también algunos temibles enemigos. Pero, sobre todo, conocerá los secretos que le permitirán cumplir su destino. Pues, aunque no lo parezca a primera vista, Harry no es un chico común y corriente: ¡es un verdadero mago!",
       "category": "Fantasía",
-      "bookurl": "https://12233/1231s3",
-      "views": 45,
-      "totalScore": [],
+      "bookurl": "https://www.google.com.pe/books/edition/Harry_Potter_y_la_piedra_filosofal/2zgRDXFWkm8C?hl=es-419&gbpv=0",
+      "views": 23145,
+      "totalScore": 0,
       "reviews": []
     },
     {
-      "id": "5k0xfy6f6",
-      "name": "123",
-      "summary": "321",
+      "id": "234k123jdtcdhyf1",
+      "name": "Juego de Tronos (Cancion de Hielo y Fuego 1)",
+      "summary": "Los cinco títulos hasta ahora publicados de «Canción de hielo y fuego», Juego de tronos, Choque de reyes, Tormenta de espadas, Festín de cuervos y Danza de dragones, llegan a las librerías en una nueva edición que conquistará tanto a los fans de esta saga épica como a aquellos que esperan la oportunidad perfecta para adentrarse en sus páginas por primera vez. En un mundo diferente al nuestro, en el que los veranos y los inviernos duran generaciones, un gran conflicto está a punto de estallar. Robert Baratheon ocupa el Trono de Hierro en el cálido y opulento sur de Poniente. Se lo arrebató tras una sangrienta guerra al último rey loco de la dinastía Targaryen, señores de dragones. Sin embargo, ahora su poder se ve amenazado: en el norte, el Muro erigido para proteger el reino de las bestias y de los extraños se tambalea. Hace siglos que nadie ve a los caminantes blancos, pero ¿quiénes son entonces esos seres de ojos azules y fríos que se ocultan en las sombras de los bosques y que les arrebatan la vida y la mente a aquellos desafortunados que se cruzan en su camino? El final del verano está próximo, se acerca el invierno y solo un milagro podrá disipar las tinieblas.",
+      "category": "Aventura",
+      "bookurl": "https://www.buscalibre.pe/libro-juego-de-tronos-cancion-de-hielo-y-fuego-1/9788401032424/p/54941172",
+      "views": 7321,
+      "totalScore": 0,
+      "reviews": []
+    },
+    {
+      "id": "324df123ljdh",
+      "name": "Los juegos del hambre 1",
+      "summary": "Un pasado de guerras ha dejado los 12 distritos que dividen Panem bajo el poder tiránico del “Capitolio”. Sin libertad y en la pobreza, nadie puede salir de los límites de su distrito. Sólo una chica de 16 años, Katniss Everdeen, osa desafiar las normas para conseguir comida. Sus principios se pondrán a prueba con “Los juegos del hambre”, espectáculo televisado que el Capitolio organiza para humillar a la población. Cada año, 2 representantes de cada distrito serán obligados a subsistir en un medio hostil y luchar a muerte entre ellos hasta que quede un solo superviviente.",
       "category": "Ciencia Ficción",
-      "bookurl": "https://12233/1231s321233",
-      "views": 89,
-      "totalScore": [],
-      "reviews": []
-    },
-    {
-      "id": "qbl0yql5g",
-      "name": "Libro1",
-      "summary": "Descripcion1",
-      "category": "Terror",
-      "bookurl": "https://Libro1/Descripcion1",
-      "views": 4,
-      "totalScore": [],
-      "reviews": []
-    },
-    {
-      "id": "aw4968nh3",
-      "name": "Libro123",
-      "summary": "Libro123",
-      "category": "Terror",
-      "bookurl": "https://Libro123.com",
-      "views": 7,
-      "totalScore": [],
-      "reviews": []
-    },
-    {
-      "id": "qomuprc48",
-      "name": "Librox",
-      "summary": "Descripcionx",
-      "category": "Ciencia Ficción",
-      "bookurl": "https://Librox/Descripcionx",
-      "views": 7,
-      "totalScore": [],
-      "reviews": []
-    },
-    {
-      "id": "3ajfba7s2",
-      "name": "Libro x",
-      "summary": "Libro x",
-      "category": "Fantasía",
-      "bookurl": "https://123/123",
-      "views": 89,
-      "totalScore": [],
-      "reviews": []
-    },
-    {
-      "id": "utx7giobw",
-      "name": "Libro 123",
-      "summary": "Libro 123",
-      "category": "Ciencia Ficción",
-      "bookurl": "https://123/123",
-      "views": 0,
-      "totalScore": [],
-      "reviews": []
-    },
-    {
-      "id": "WFSbuEpSt5",
-      "name": "ccccc@gmail.com",
-      "summary": "ccccc@gmail.com",
-      "category": "Fantasía",
-      "bookurl": "http://localhost:4200/upload-book",
-      "views": 79,
+      "bookurl": "https://www.google.com.pe/books/edition/Los_Juegos_del_Hambre_1_Los_Juegos_del_H/8FjODwAAQBAJ?hl=es-419&gbpv=0",
+      "views": 4213,
       "totalScore": 0,
       "reviews": []
     }
