@@ -5,9 +5,6 @@ import { BookDetailComponent } from './book-preview/book-detail/book-detail.comp
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
-import { BookComponent } from './book/book.component';
-import { ChatAutorComponent } from './chat-autor/chat-autor.component';
-import { ForumComponent } from './forum/forum.component';
 import { HomeComponent } from './home/home.component';
 import { LibraryComponent } from './library/library.component'
 import { UploadBookComponent } from './upload-book/upload-book.component';
@@ -19,9 +16,6 @@ export const routes: Routes = [
   { path: 'profile', component: UserProfileComponent, canActivate: [AuthGuard], title: 'User Profile' },
   { path: 'book/:id', component: BookDetailComponent, canActivate: [AuthGuard], title: 'Book Preview' },
   { path: 'subscription', component: SubscriptionPlansComponent, canActivate: [AuthGuard], title: 'Subscription Plans' },
-  { path: 'book-reading', component: BookComponent, canActivate: [AuthGuard], title: 'Book Reading' },
-  { path: 'forum', component: ForumComponent, canActivate: [AuthGuard], title: 'Forum' },
-  { path: 'chat-authors', component: ChatAutorComponent, canActivate: [AuthGuard], title: 'Chat with Authors' },
   { path: 'library', component: LibraryComponent, canActivate: [AuthGuard], title: 'Library' },
   { path: 'history', component: LibraryComponent, canActivate: [AuthGuard], title: 'History' },
   { path: 'uploaded-books', component: LibraryComponent, canActivate: [AuthGuard], title: 'Uploaded Books' },
