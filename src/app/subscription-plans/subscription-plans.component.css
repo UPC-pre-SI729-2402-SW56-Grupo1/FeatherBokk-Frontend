@@ -2,13 +2,14 @@
   text-align: center;
   font-family: 'Arial', sans-serif;
   background-color: #f5deb3;
-  padding: 50px 0;
+  padding: 50px 20px;
 }
 
 .plans {
   display: flex;
   justify-content: center;
   gap: 50px;
+  flex-wrap: wrap;
 }
 
 .plan {
@@ -19,13 +20,15 @@
   max-width: 230px;
   text-align: left;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
 }
 
 .subscription-level {
   text-align: center;
 }
 
-.plan h2, .plan h3 {
+.plan h2,
+.plan h3 {
   color: white;
 }
 
@@ -48,11 +51,10 @@
   position: relative;
   padding-left: 25px;
   margin-bottom: 10px;
-
 }
 
 .plan li::before {
-  content: '\2713'; /* Símbolo de check */
+  content: '\2713';
   position: absolute;
   left: 0;
   top: 0;
@@ -64,6 +66,7 @@
   line-height: 15px;
   color: #000;
 }
+
 button {
   width: 100%;
   background-color: #e0e0e0;
@@ -79,4 +82,31 @@ button {
 
 button:hover {
   background-color: #d0d0d0;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .plans {
+    gap: 20px;
+  }
+
+  .plan {
+    max-width: 100%;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .plan h2 {
+    font-size: 16px;
+  }
+
+  .plan h3 {
+    font-size: 24px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 8px;
+  }
 }

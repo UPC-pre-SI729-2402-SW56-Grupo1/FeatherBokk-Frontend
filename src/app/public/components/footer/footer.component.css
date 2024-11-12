@@ -1,3 +1,4 @@
+/* Footer styles */
 footer {
   display: flex;
   justify-content: space-between;
@@ -10,46 +11,83 @@ footer {
   margin-top: 40px;
 }
 
-footer .contact-info {
+footer .contact-info,
+footer .language-switcher,
+footer .social-icons {
   flex: 1;
+}
+
+footer .contact-info {
   text-align: left;
 }
 
-footer .brand-info {
-  flex: 2;
-  text-align: center;
-}
-
 footer .social-icons {
-  flex: 1;
   display: flex;
-  justify-content: right;
-  align-items: center;
-
+  justify-content: center;
+  gap: 15px;
 }
 
 .language-switcher {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 10px;
 }
 
 .button-switcher {
-  margin: 0 5px;
-  padding: 5px;
+  margin: 0;
+  padding: 5px 10px;
   cursor: pointer;
+  background-color: #fbf999;
+  border: none;
+  border-radius: 5px;
+  color: #34343a;
 }
+
 .button-switcher:hover {
-  background-color: #f4f4e3;
-  border: 1px solid #000;
+  background-color: #34343a;
+  color: #fbf999;
+  border: 1px solid #34343a;
 }
 
 footer p {
   margin: 0;
+  color: #34343a;
 }
 
 footer .social-icons img {
   width: 30px;
-  margin: 0 10px;
+}
 
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  footer .social-icons {
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  footer .language-switcher {
+    margin-top: 10px;
+  }
+
+  footer .contact-info {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .button-switcher {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  footer .social-icons img {
+    width: 25px;
+  }
 }

@@ -1,6 +1,7 @@
 .upload-book-container {
+  width: 90%;
   max-width: 500px;
-  margin: 50px auto;
+  margin: 30px auto;
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -20,10 +21,11 @@ form {
 label {
   margin-top: 10px;
   font-weight: bold;
+  font-size: 16px;
 }
 
 input, textarea, select {
-  padding: 8px;
+  padding: 10px;
   margin-top: 5px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -37,14 +39,36 @@ textarea {
 
 button {
   margin-top: 20px;
-  padding: 10px;
+  padding: 12px;
   background-color: #28a745;
   color: white;
+  font-size: 16px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-weight: bold;
 }
 
 button[disabled] {
   background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Estilos responsivos */
+@media (max-width: 480px) {
+  .upload-book-container {
+    padding: 15px;
+  }
+
+  label {
+    font-size: 14px;
+  }
+
+  input, textarea, select {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 14px;
+  }
 }
