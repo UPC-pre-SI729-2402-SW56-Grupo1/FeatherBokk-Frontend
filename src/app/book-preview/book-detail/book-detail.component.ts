@@ -87,8 +87,28 @@ export class BookDetailComponent implements OnInit {
   }
 
   readBook() {
-    if (this.book?.bookurl) {
+    if (this.book && this.user) {
+      const bookId = this.book.id;
+      const lastTimeRead = this.formatDate(new Date());
+      const historyEntry = { idBook: bookId, lastTimeRead };
+      const existingEntry = this.user.booksHistory.find((entry) => entry.idBook === bookId);
+
+      if (!existingEntry) {
+        this.user.booksHistory.push(historyEntry);
+
+        this.bookService.updateUser(this.user.id, { booksHistory: this.user.booksHistory }).subscribe(() => {
+          console.log('Historial actualizado exitosamente');
+        });
+      }
+
       window.open(this.book.bookurl, '_blank');
     }
   }
+  private formatDate(date: Date): string {
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const year = date.getFullYear();
+    return `${day}/${month}/${year}`;
+  }
+
 }
