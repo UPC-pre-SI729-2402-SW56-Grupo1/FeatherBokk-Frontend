@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { EventDataService } from '../shared/services/http-common.service';
-
+import { UserDataService } from '../shared/services/user-data.service';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +11,7 @@ import { EventDataService } from '../shared/services/http-common.service';
 export class LoginComponent {
   hidePassword: boolean = true;
 
-  constructor(private router: Router, private eventDataService: EventDataService) {}
+  constructor(private router: Router, private userDataService: UserDataService) {}
 
   togglePasswordVisibility() {
     this.hidePassword = !this.hidePassword;
@@ -25,7 +24,7 @@ export class LoginComponent {
     const email = (form.querySelector('#email') as HTMLInputElement).value;
     const password = (form.querySelector('#password') as HTMLInputElement).value;
 
-    this.eventDataService.loginUser(email, password).subscribe(response => {
+    this.userDataService.loginUser({ email, password }).subscribe(response => {
       if (response.success) {
         this.router.navigate(['/']);
       } else {

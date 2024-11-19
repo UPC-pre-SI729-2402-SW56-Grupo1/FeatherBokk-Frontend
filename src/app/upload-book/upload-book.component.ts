@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { EventDataService, User } from '../shared/services/http-common.service';
+import { BookDataService } from '../shared/services/book-data.service';
+import { UserDataService } from '../shared/services/user-data.service';
+import { User } from '../shared/services/http-common.service';
 import { Router } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -20,7 +22,8 @@ export class UploadBookComponent {
 
   constructor(
     private fb: FormBuilder,
-    private bookService: EventDataService,
+    private bookService: BookDataService,
+    private userService: UserDataService,
     private router: Router
   ) {
     this.bookForm = this.fb.group({
@@ -29,7 +32,8 @@ export class UploadBookComponent {
       category: ['', Validators.required],
       bookurl: ['', [Validators.required, Validators.pattern('https?://.+')]]
     });
-    this.bookService.getAuthenticatedUser().subscribe((user) => {
+
+    this.userService.getAuthenticatedUser().subscribe((user) => {
       this.user = user;
     });
   }
@@ -42,19 +46,15 @@ export class UploadBookComponent {
         summary: this.bookForm.value.summary,
         category: this.bookForm.value.category,
         bookurl: this.bookForm.value.bookurl,
-        views: this.generateRandomViews(),
+        views: 0,
         totalScore: 0,
         reviews: []
       };
 
-      this.bookService.addBook(newBook, this.user.id).subscribe(() => {
+      this.bookService.createBook(newBook).subscribe(() => {
         alert('Book uploaded successfully');
         this.router.navigate(['/uploaded-books']);
       });
     }
-  }
-  
-  private generateRandomViews(): number {
-    return Math.floor(Math.random() * 100);
   }
 }

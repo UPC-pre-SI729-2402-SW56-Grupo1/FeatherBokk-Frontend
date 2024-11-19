@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { EventDataService, User } from '../shared/services/http-common.service';
+import { UserDataService } from '../shared/services/user-data.service';
+import { User } from '../shared/services/http-common.service'
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
@@ -13,14 +14,14 @@ export class SubscriptionPlansComponent implements OnInit {
   subscriptionLevel: string = '';
   userId: string | null = null;
 
-  constructor(private authService: EventDataService) {}
+  constructor(private userService: UserDataService) {}
 
   ngOnInit(): void {
     this.loadUserData();
   }
 
   loadUserData(): void {
-    this.authService.getAuthenticatedUser().subscribe((user: User | null) => {
+    this.userService.getAuthenticatedUser().subscribe((user: User | null) => {
       if (user) {
         this.subscriptionLevel = user.subscriptionLevel;
         this.userId = user.id;
@@ -30,7 +31,7 @@ export class SubscriptionPlansComponent implements OnInit {
 
   changeSubscriptionLevel(level: string): void {
     if (this.userId) {
-      this.authService.updateSubscriptionLevel(this.userId, level).subscribe(() => {
+      this.userService.updateSubscriptionLevel(this.userId, level).subscribe(() => {
         this.subscriptionLevel = level;
         alert(`Subscription updated to Level ${level}`);
       });

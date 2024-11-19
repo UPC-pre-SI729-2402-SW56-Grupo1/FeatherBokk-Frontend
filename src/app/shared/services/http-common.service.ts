@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
-import { map, catchError, switchMap } from 'rxjs/operators';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { Observable, of, throwError, catchError } from 'rxjs';
+import { environment } from '../../../environments/environment'
 
 export interface User {
   id: string;
@@ -28,142 +28,91 @@ export interface Book {
 @Injectable({
   providedIn: 'root',
 })
-export class EventDataService {
-  private apiUrl = 'https://672559c6c39fedae05b48fbf.mockapi.io/';
-  private authTokenKey = 'auth_token';
+export class HttpCommonService<T> {
+  protected basePath: string = `${environment.serverBasePath}`;
+  protected resourceEndPoint: string = '';
+
+  protected httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${localStorage.getItem('auth_token') || ''}`,
+    }),
+  };
 
   constructor(private http: HttpClient) {}
 
   generateId(length: number = 10): string {
     const characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
     let result = '';
-  
+
     for (let i = 0; i < length; i++) {
-      const randomIndex = Math.floor(Math.random()   
-   * characters.length);
+      const randomIndex = Math.floor(Math.random() * characters.length);
       result += characters.charAt(randomIndex);
     }
-  
-    return result;   
+
+    return result;
   }
 
-  getUsers(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}/users`);
+  get(id: string): Observable<T> {
+    return this.http
+      .get<T>(`${this.basePath}/${this.resourceEndPoint}/${id}`, this.httpOptions)
+      .pipe(catchError(this.handleError));
   }
 
-  getUserById(userId: string): Observable<User> {
-    return this.http.get<User>(`${this.apiUrl}/users/${userId}`);
+  getAll(): Observable<T[]> {
+    return this.http
+      .get<T[]>(`${this.basePath}/${this.resourceEndPoint}`, this.httpOptions)
+      .pipe(catchError(this.handleError));
   }
 
-  getBooks(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}/books`);
+  create(item: T): Observable<T> {
+    return this.http
+      .post<T>(`${this.basePath}/${this.resourceEndPoint}`, item, this.httpOptions)
+      .pipe(catchError(this.handleError));
   }
 
-  registerUser(userData: any): Observable<any> {
-    const userId = this.generateId();
-    const newUser = { ...userData, id: userId };
-  
-    return this.http.post(`${this.apiUrl}/users`, newUser);
+
+  post(endpoint: string, item: any): Observable<any> {
+    return this.http
+      .post<any>(`${this.basePath}/${this.resourceEndPoint}/${endpoint}`, item, this.httpOptions)
+      .pipe(catchError(this.handleError));
   }
 
-  loginUser(email: string, password: string): Observable<any> {
-    return this.getUsers().pipe(
-      map((users) => {
-        const user = users.find(
-          (u) => u.email === email && u.password === password
-        );
-        if (user) {
-          localStorage.setItem(
-            this.authTokenKey,
-            JSON.stringify({ id: user.id })
-          );
-          return { success: true };
-        } else {
-          return { success: false, message: 'Invalid credentials' };
-        }
-      }),
-      catchError((error) => of({ success: false, message: error.message }))
-    );
+  put(id: string, item: Partial<T>): Observable<T> {
+    return this.http
+      .put<T>(`${this.basePath}/${this.resourceEndPoint}/${id}`, item, this.httpOptions)
+      .pipe(catchError(this.handleError));
   }
+
+  delete(id: string): Observable<void> {
+    return this.http
+      .delete<void>(`${this.basePath}/${this.resourceEndPoint}/${id}`, this.httpOptions)
+      .pipe(catchError(this.handleError));
+  }
+
 
   isAuthenticated(): boolean {
-    return !!localStorage.getItem(this.authTokenKey);
+    return !!localStorage.getItem('auth_token');
   }
 
-  getAuthenticatedUser(): Observable<User | null> {
-    const token = localStorage.getItem(this.authTokenKey);
-    if (token) {
-      const userId = JSON.parse(token).id;
-      return this.http.get<User>(`${this.apiUrl}/users/${userId}`);
+  logout(): void {
+    localStorage.removeItem('auth_token');
+  }
+
+  getToken(): string | null {
+    return localStorage.getItem('auth_token');
+  }
+
+  private handleError(error: HttpErrorResponse) {
+    if (error.status === 401) {
+      console.error('Unauthorized request. Please login again.');
+      alert('Unauthorized request. Please login again.');
+    } else if (error.status === 403) {
+      console.error('Access forbidden. You do not have permission to perform this action.');
+      alert('Access forbidden. You do not have permission to perform this action.');
+    } else {
+      console.error(`An error occurred: ${error.message}`);
     }
-    return of(null);
-  }
-
-  getBookById(bookId: string): Observable<Book> {
-    return this.http.get<Book>(`${this.apiUrl}/books/${bookId}`);
-  }
-
-  updateBook(bookId: string, data: Partial<Book>): Observable<any> {
-    return this.http.put(`${this.apiUrl}/books/${bookId}`, data);
-  }
-
-  addBook(book: any, userId: string): Observable<any> {
-    const bookId = this.generateId();
-    const newBook = { ...book, id: bookId };
-  
-    return this.http.post(`${this.apiUrl}/books`, newBook).pipe(
-      switchMap((createdBook: any) => {
-        const uploadedBook = {
-          idBook: createdBook.id,
-          uploadedDate: this.formatDate(new Date())
-        };
-  
-        return this.http.get<User>(`${this.apiUrl}/users/${userId}`).pipe(
-          switchMap((user) => {
-            const updatedUploadedBooks = [...user.uploadedBooks, uploadedBook];
-            return this.http.put(`${this.apiUrl}/users/${userId}`, {
-              ...user,
-              uploadedBooks: updatedUploadedBooks
-            });
-          })
-        );
-      })
-    );
-  }
-
-  addUploadedBookToUser(userId: string, bookId: string): Observable<any> {
-    const uploadedBook = {
-      idBook: bookId,
-      uploadedDate: this.formatDate(new Date()),
-    };
-
-    return this.http.get<User>(`${this.apiUrl}/users/${userId}`).pipe(
-      switchMap((user) => {
-        const updatedUploadedBooks = [...user.uploadedBooks, uploadedBook];
-        return this.http.put(`${this.apiUrl}/users/${userId}`, {
-          uploadedBooks: updatedUploadedBooks,
-        });
-      })
-    );
-  }
-
-  private formatDate(date: Date): string {
-    const day = String(date.getDate()).padStart(2, '0');
-    const month = String(date.getMonth() + 1).padStart(2, '0');
-    const year = date.getFullYear();
-    return `${day}/${month}/${year}`;
-  }
-
-  updateSubscriptionLevel(userId: string, newLevel: string): Observable<any> {
-    return this.http.put(`${this.apiUrl}/users/${userId}`, {
-      subscriptionLevel: newLevel,
-    });
-  }
-  updateUser(userId: string, data: Partial<User>): Observable<any> {
-    return this.http.put(`${this.apiUrl}/users/${userId}`, data);
-  }
-
-  logout() {
-    localStorage.removeItem(this.authTokenKey);
+    return throwError(() => new Error('An error occurred; please try again later.'));
   }
 }

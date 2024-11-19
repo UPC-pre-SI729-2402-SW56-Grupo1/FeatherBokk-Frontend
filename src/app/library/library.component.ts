@@ -1,18 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { EventDataService, User } from '../shared/services/http-common.service';
+import { UserDataService } from '../shared/services/user-data.service';
+import { BookDataService } from '../shared/services/book-data.service';
+import { User, Book } from '../shared/services/http-common.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
-
-interface Book {
-  id: string;
-  name: string;
-  summary: string;
-  category: string;
-  views: number;
-  totalScore: number;
-}
 
 @Component({
   selector: 'app-library',
@@ -34,12 +27,9 @@ export class LibraryComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private authService: EventDataService
+    private userService: UserDataService,
+    private bookService: BookDataService
   ) {}
-
-  goToBookDetail(bookId: string) {
-    this.router.navigate(['/book', bookId]);
-  }
 
   ngOnInit(): void {
     this.setTitle();
@@ -60,29 +50,29 @@ export class LibraryComponent implements OnInit {
   }
 
   loadBooks() {
-    this.authService.getAuthenticatedUser().subscribe((user: User | null) => {
+    this.userService.getAuthenticatedUser().subscribe((user: User | null) => {
       this.user = user;
 
       if (this.title === 'Library') {
-        this.authService.getBooks().subscribe((books: Book[]) => {
+        this.bookService.getAllBooks().subscribe((books: Book[]) => {
           this.books = books;
           this.filteredBooks = books;
         });
       } else if (this.title === 'History' && user) {
         const historyIds = user.booksHistory.map((book) => book.idBook);
-        this.authService.getBooks().subscribe((books: Book[]) => {
+        this.bookService.getAllBooks().subscribe((books: Book[]) => {
           this.books = books.filter((book) => historyIds.includes(book.id));
           this.filteredBooks = this.books;
         });
       } else if (this.title === 'Uploaded Books' && user) {
         const uploadedIds = user.uploadedBooks.map((book) => book.idBook);
-        this.authService.getBooks().subscribe((books: Book[]) => {
+        this.bookService.getAllBooks().subscribe((books: Book[]) => {
           this.books = books.filter((book) => uploadedIds.includes(book.id));
           this.filteredBooks = this.books;
         });
       } else if (this.title === 'Saved Books' && user) {
         const savedIds = user.savedBooks;
-        this.authService.getBooks().subscribe((books: Book[]) => {
+        this.bookService.getAllBooks().subscribe((books: Book[]) => {
           this.books = books.filter((book) => savedIds.includes(book.id));
           this.filteredBooks = this.books;
         });
@@ -90,30 +80,13 @@ export class LibraryComponent implements OnInit {
     });
   }
 
-  searchBooks() {
-    this.filteredBooks = this.books.filter(book =>
-      book.name.toLowerCase().includes(this.searchQuery.toLowerCase())
-    );
-    this.currentPage = 1;
+  onCategoryChange(event: Event) {
+    const selectElement = event.target as HTMLSelectElement;
+    this.filterByCategory(selectElement.value);
   }
 
-  saveBook(bookId: string) {
-    if (this.user && !this.user.savedBooks.includes(bookId)) {
-      this.user.savedBooks.push(bookId);
-      this.authService.updateUser(this.user.id, { savedBooks: this.user.savedBooks }).subscribe();
-    }
-  }
-
-  get paginatedBooks(): Book[] {
-    const start = (this.currentPage - 1) * this.itemsPerPage;
-    const end = start + this.itemsPerPage;
-    return this.filteredBooks.slice(start, end);
-  }
-
-  nextPage() {
-    if (this.currentPage < this.totalPages) {
-      this.currentPage++;
-    }
+  goToBookDetail(bookId: string) {
+    this.router.navigate(['/book', bookId]);
   }
 
   prevPage() {
@@ -122,13 +95,14 @@ export class LibraryComponent implements OnInit {
     }
   }
 
-  get totalPages(): number {
-    return Math.ceil(this.filteredBooks.length / this.itemsPerPage);
+  nextPage() {
+    if (this.currentPage < this.totalPages) {
+      this.currentPage++;
+    }
   }
 
-  onCategoryChange(event: Event) {
-    const selectElement = event.target as HTMLSelectElement;
-    this.filterByCategory(selectElement.value);
+  get totalPages(): number {
+    return Math.ceil(this.filteredBooks.length / this.itemsPerPage);
   }
 
   filterByCategory(category: string | null) {
@@ -140,28 +114,32 @@ export class LibraryComponent implements OnInit {
     this.currentPage = 1;
   }
 
-  sortBy(field: string) {
-    if (field === 'lastTimeRead' && this.user) {
-      this.filteredBooks.sort((a, b) => {
-        const aDate = this.user?.booksHistory.find((book) => book.idBook === a.id)?.lastTimeRead || '';
-        const bDate = this.user?.booksHistory.find((book) => book.idBook === b.id)?.lastTimeRead || '';
-        return new Date(bDate).getTime() - new Date(aDate).getTime();
-      });
-    } else if (field === 'uploadedDate' && this.user) {
-      this.filteredBooks.sort((a, b) => {
-        const aDate = this.user?.uploadedBooks.find((book) => book.idBook === a.id)?.uploadedDate || '';
-        const bDate = this.user?.uploadedBooks.find((book) => book.idBook === b.id)?.uploadedDate || '';
-        return new Date(bDate).getTime() - new Date(aDate).getTime();
+  saveBook(bookId: string) {
+    if (this.user && !this.user.savedBooks.includes(bookId)) {
+      this.user.savedBooks.push(bookId);
+      this.userService.updateUser(this.user.id, { savedBooks: this.user.savedBooks }).subscribe();
+    }
+  }
+
+  removeBook(bookId: string) {
+    if (this.user && this.user.savedBooks.includes(bookId)) {
+      this.user.savedBooks = this.user.savedBooks.filter(id => id !== bookId);
+      this.userService.updateUser(this.user.id, { savedBooks: this.user.savedBooks }).subscribe(() => {
+        this.filteredBooks = this.filteredBooks.filter(book => book.id !== bookId);
       });
     }
   }
-  
-  removeBook(bookId: string) {
-    if (this.user && this.user.savedBooks.includes(bookId)) {
-        this.user.savedBooks = this.user.savedBooks.filter(id => id !== bookId);
-        this.authService.updateUser(this.user.id, { savedBooks: this.user.savedBooks }).subscribe(() => {
-            this.filteredBooks = this.filteredBooks.filter(book => book.id !== bookId);
-        });
-    }
-}
+
+  searchBooks() {
+    this.filteredBooks = this.books.filter(book =>
+      book.name.toLowerCase().includes(this.searchQuery.toLowerCase())
+    );
+    this.currentPage = 1;
+  }
+
+  get paginatedBooks(): Book[] {
+    const start = (this.currentPage - 1) * this.itemsPerPage;
+    const end = start + this.itemsPerPage;
+    return this.filteredBooks.slice(start, end);
+  }
 }

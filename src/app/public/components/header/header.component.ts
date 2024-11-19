@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { EventDataService, User } from '../../../shared/services/http-common.service';
+import { UserDataService } from '../../../shared/services/user-data.service';
+import { User } from '../../../shared/services/http-common.service';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -16,7 +17,7 @@ export class HeaderComponent implements OnInit {
   isAuthenticated: boolean = false;
   username: string | null = null;
 
-  constructor(private authService: EventDataService, private router: Router) {}
+  constructor(private userDataService: UserDataService, private router: Router) {}
 
   ngOnInit(): void {
     this.checkAuthentication();
@@ -27,16 +28,16 @@ export class HeaderComponent implements OnInit {
   }
 
   checkAuthentication() {
-    this.isAuthenticated = this.authService.isAuthenticated();
+    this.isAuthenticated = this.userDataService.isAuthenticated();
     if (this.isAuthenticated) {
-      this.authService.getAuthenticatedUser().subscribe((user: User | null) => {
+      this.userDataService.getAuthenticatedUser().subscribe((user: User | null) => {
         this.username = user?.username || 'Usuario';
       });
     }
   }
 
   logout() {
-    this.authService.logout();
+    this.userDataService.logout();
     this.isAuthenticated = false;
     this.username = null;
     this.router.navigate(['/login']);

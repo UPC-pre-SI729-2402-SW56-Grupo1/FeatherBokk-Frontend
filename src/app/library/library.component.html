@@ -21,16 +21,6 @@
         </option>
       </select>
     </div>
-    <div *ngIf="title === 'History'" class="filter-container">
-      <button (click)="sortBy('lastTimeRead')"  class="filter order-button">
-        {{ "library.sortByLastLecture" | translate }}
-      </button>
-    </div>
-    <div *ngIf="title === 'Uploaded Books'" class="filter-container">
-      <button (click)="sortBy('uploadedDate')" class="filter order-button">
-        {{ "library.sortByUploadDate" | translate }}
-      </button>
-    </div>
 
     <ul class="book-list">
       <li *ngFor="let book of paginatedBooks">
@@ -38,7 +28,7 @@
         <div *ngIf="title !== 'Saved Books'" class="button-save-book" (click)="saveBook(book.id)">
           <div class="material-symbols-outlined">bookmark</div>
         </div>
-        
+
         <button *ngIf="title === 'Saved Books'" (click)="removeBook(book.id)" class="remove-button">
           {{ "library.remove" | translate }}
         </button>

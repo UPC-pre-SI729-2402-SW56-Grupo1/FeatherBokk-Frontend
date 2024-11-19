@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { EventDataService, User } from '../../shared/services/http-common.service';
+import { BookDataService } from '../../shared/services/book-data.service';
+import { UserDataService } from '../../shared/services/user-data.service';
+import { User } from '../../shared/services/http-common.service';
 import { RatingComponent } from '../rating/rating.component';
 import { BookReviewsComponent } from '../book-reviews/book-reviews.component';
 import { TranslateModule } from '@ngx-translate/core';
@@ -38,7 +40,8 @@ export class BookDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private bookService: EventDataService
+    private bookService: BookDataService,
+    private userService: UserDataService
   ) {}
 
   checkScoreLimit() {
@@ -53,7 +56,7 @@ export class BookDetailComponent implements OnInit {
       this.loadBook(bookId);
     }
 
-    this.bookService.getAuthenticatedUser().subscribe((user) => {
+    this.userService.getAuthenticatedUser().subscribe((user) => {
       this.user = user;
     });
   }
@@ -71,7 +74,7 @@ export class BookDetailComponent implements OnInit {
         comment: this.newReview.comment,
         score: this.newReview.score
       };
-      
+
       this.book.reviews.push(review);
 
       const totalScore = this.book.reviews.reduce((sum, review) => sum + review.score, 0) / this.book.reviews.length;
@@ -96,7 +99,7 @@ export class BookDetailComponent implements OnInit {
       if (!existingEntry) {
         this.user.booksHistory.push(historyEntry);
 
-        this.bookService.updateUser(this.user.id, { booksHistory: this.user.booksHistory }).subscribe(() => {
+        this.userService.updateUser(this.user.id, { booksHistory: this.user.booksHistory }).subscribe(() => {
           console.log('Historial actualizado exitosamente');
         });
       }
@@ -104,11 +107,11 @@ export class BookDetailComponent implements OnInit {
       window.open(this.book.bookurl, '_blank');
     }
   }
+
   private formatDate(date: Date): string {
     const day = String(date.getDate()).padStart(2, '0');
     const month = String(date.getMonth() + 1).padStart(2, '0');
     const year = date.getFullYear();
     return `${day}/${month}/${year}`;
   }
-
 }

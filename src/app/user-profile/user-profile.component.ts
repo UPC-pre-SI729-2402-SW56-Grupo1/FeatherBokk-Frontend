@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { EventDataService, User } from '../shared/services/http-common.service';
+import { UserDataService } from '../shared/services/user-data.service';
+import { User } from '../shared/services/http-common.service'
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
@@ -15,14 +16,14 @@ export class UserProfileComponent implements OnInit {
   phone: string = '';
   subscriptionLevel: string = '';
 
-  constructor(private authService: EventDataService) {}
+  constructor(private userService: UserDataService) {}
 
   ngOnInit(): void {
     this.loadUserData();
   }
 
   loadUserData(): void {
-    this.authService.getAuthenticatedUser().subscribe((user: User | null) => {
+    this.userService.getAuthenticatedUser().subscribe((user: User | null) => {
       if (user) {
         this.username = user.username;
         this.email = user.email;
